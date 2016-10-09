@@ -3,6 +3,8 @@
 namespace app\modules\contracts\models;
 
 use Yii;
+use app\modules\contracts\models\Summa;
+
 
 /**
  * This is the model class for table "devices".
@@ -64,5 +66,12 @@ class Devices extends \yii\db\ActiveRecord
     public function getFullName()
     {
         return $this->manufacturer.' '.$this->model.', IMEI '.$this->emai.', price '.$this->price;
+    }
+
+    //сумма контракта для устойства
+    public function getSumma()
+    {
+        return Summa::getSumma($this->price);
+
     }
 }

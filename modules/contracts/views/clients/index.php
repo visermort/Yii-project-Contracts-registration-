@@ -14,9 +14,7 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="clients-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
-
-    <p>
+       <p>
         <?= Html::a('Create Clients', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 <?php Pjax::begin(); ?>    <?= GridView::widget([
@@ -35,6 +33,3 @@ $this->params['breadcrumbs'][] = $this->title;
     ]); ?>
 <?php Pjax::end(); ?></div>
 
-<?php 
-//LinkPager::widget(['pagination' => $pagination]) ;
-?>

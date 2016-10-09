@@ -15,11 +15,12 @@ use app\modules\contracts\models\Devices;
  */
 class Summa
 {
-	public static function getSumma($id)
+	//public static function getSumma($id)
+	public static function getSumma($price)
 	{
-		$device = Devices::find()->where(['id' => $id])->one();
+		//$device = Devices::find()->where(['id' => $id])->one();
 
-		$price =  $device->price;
+		//$price =  $device->price;
 
 		if ($price < 2401) {
 			$summa = 0;

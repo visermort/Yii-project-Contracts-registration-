@@ -3,7 +3,7 @@
 namespace app\modules\contracts\models;
 
 use Yii;
-use app\modules\contracts\models\Summa;
+//use app\modules\contracts\models\Summa;
 
 /**
  * This is the model class for table "contracts".
@@ -33,7 +33,7 @@ class Contracts extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['date', 'client_id', 'device_id'], 'required'],
+            [['date', 'client_id', 'device_id','summa'], 'required'],
             [['date'], 'safe'],
             [['client_id', 'device_id'], 'integer'],
             [['summa'], 'number'],
@@ -50,8 +50,8 @@ class Contracts extends \yii\db\ActiveRecord
         return [
             'id' => '№',
             'date' => 'Дата',
-            'client_id' => 'Client ID',
-            'device_id' => 'Device ID',
+            'client_id' => 'Клиент',
+            'device_id' => 'Устройство',
             'summa' => 'Сумма',
         ];
     }
@@ -81,22 +81,22 @@ class Contracts extends \yii\db\ActiveRecord
         return new ContractsQuery(get_called_class());
     }
 
-    public function beforeSave($insert)
-    {
-        if (parent::beforeSave($insert)) {
+    // public function beforeSave($insert)
+    // {
+    //     if (parent::beforeSave($insert)) {
             
-            //получаем вычисляемую сумму контракта
-            $this->summa = Summa::getSumma($this->device_id);
+    //         //получаем вычисляемую сумму контракта
+    //         $this->summa = Summa::getSumma($this->device_id);
 
-            //если она 0 то запись отменяется
-            if ($this->summa == 0) {
-                return false;
-            }
+    //         //если она 0 то запись отменяется
+    //         if ($this->summa == 0) {
+    //             return false;
+    //         }
 
-            return true;
-        } else {
-            return false;
-        }
-    }
+    //         return true;
+    //     } else {
+    //         return false;
+    //     }
+    // }
 
 }

@@ -5,6 +5,8 @@ namespace app\modules\contracts\controllers;
 use Yii;
 use app\modules\contracts\models\Contracts;
 use app\modules\contracts\models\ContractsSearch;
+use app\modules\contracts\models\ClientsCearch;
+use app\modules\contracts\models\DevicesSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -75,6 +77,11 @@ class DefaultController extends Controller
      */
     public function actionCreate()
     {
+       
+        $clientSearchModel = new ClientsCearch();
+        $clientDataProvider = $clientSearchModel->search(Yii::$app->request->queryParams);
+        $deviceSearchModel = new DevicesSearch();
+        $deviceDataProvider = $deviceSearchModel->search(Yii::$app->request->queryParams);
         $model = new Contracts();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
@@ -82,6 +89,11 @@ class DefaultController extends Controller
         } else {
             return $this->render('create', [
                 'model' => $model,
+                'clientSearchModel' => $clientSearchModel,
+                'clientDataProvider' => $clientDataProvider,
+                'deviceSearchModel' => $deviceSearchModel,
+                'deviceDataProvider' => $deviceDataProvider,
+
             ]);
         }
     }
@@ -94,6 +106,10 @@ class DefaultController extends Controller
      */
     public function actionUpdate($id)
     {
+        $clientSearchModel = new ClientsCearch();
+        $clientDataProvider = $clientSearchModel->search(Yii::$app->request->queryParams);
+        $deviceSearchModel = new DevicesSearch();
+        $deviceDataProvider = $deviceSearchModel->search(Yii::$app->request->queryParams);
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
@@ -101,6 +117,11 @@ class DefaultController extends Controller
         } else {
             return $this->render('update', [
                 'model' => $model,
+                'clientSearchModel' => $clientSearchModel,
+                'clientDataProvider' => $clientDataProvider,
+                'deviceSearchModel' => $deviceSearchModel,
+                'deviceDataProvider' => $deviceDataProvider,
+                
             ]);
         }
     }

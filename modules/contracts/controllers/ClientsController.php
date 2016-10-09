@@ -51,15 +51,10 @@ class ClientsController extends Controller
     {
         $searchModel = new ClientsCearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-        // $pagination = new Pagination([
-        //     'defaultPageSize' => 4,
-        //     'totalCount' => $dataProvider->count,
-        // ]);
-
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
-        //    'pagination' => $pagination,
+
         ]);
     }
 
