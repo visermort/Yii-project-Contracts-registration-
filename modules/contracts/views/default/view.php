@@ -23,7 +23,10 @@ $this->params['breadcrumbs'][] = $this->title;
                 'method' => 'post',
             ],
         ]) ?>
-       <?= Html::a('View', ['print', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('PreviView', ['print-preview', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
+
+        <?= Html::a('Print', ['print', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
+
 
     </p>
     

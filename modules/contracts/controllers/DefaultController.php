@@ -11,6 +11,7 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
+use kartik\mpdf\Pdf;
 
 /**
  * DefaultController implements the CRUD actions for Contracts model.
@@ -155,11 +156,47 @@ class DefaultController extends Controller
         }
     }
 
-    public function actionPrint($id)
+    public function actionPrintPreview($id)
     {
-        return $this->render('print', [
+        return $this->renderPartial('print', [
             'model' => $this->findModel($id),
         ]);
+
+    }
+
+    public function actionPrint($id)
+    {
+ 
+        $content = $this->renderPartial('_print', [
+            'model' => $this->findModel($id),
+        ]);
+        $pdf = new Pdf([
+        // set to use core fonts only
+            'mode' => '', 
+            // A4 paper format
+            'format' => Pdf::FORMAT_A4, 
+             // portrait orientation
+            'orientation' => Pdf::ORIENT_PORTRAIT, 
+            // stream to browser inline
+            'destination' => Pdf::DEST_BROWSER, 
+            // your html content input
+            'content' => $content,  
+            // format content from your own css file if needed or use the
+            // enhanced bootstrap css built by Krajee for mPDF formatting 
+            'cssFile' => '@vendor/kartik-v/yii2-mpdf/assets/kv-mpdf-bootstrap.min.css',
+            // any css to be embedded if required
+            'cssInline' => 'body {font-size:10px}', 
+             // set mPDF properties on the fly
+            'options' => ['title' => 'Contract'],
+             // call mPDF methods on the fly
+            'methods' => [ 
+                 
+                'SetFooter'=>['Стр. {PAGENO} из {nb}'],
+            ]
+        ]);
+    
+        // return the pdf output as per the destination setting
+        return $pdf->render(); 
 
     }
 }
