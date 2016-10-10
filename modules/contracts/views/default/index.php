@@ -32,13 +32,15 @@ $this->params['breadcrumbs'][] = $this->title;
             //     'attribute' => 'clientName',
             //     'value' => 'client.name'
             //  ],
-            'client.birth',
+            //'client.birth',
             'client.passport',
+            'client.phone',
             'device.manufacturer',
             'device.model',
             'device.emai',
             'device.price',
             'summa',
+            'percent',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

@@ -23,7 +23,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'method' => 'post',
             ],
         ]) ?>
-       <?= Html::a('Печать', ['print', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
+       <?= Html::a('View', ['print', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
 
     </p>
     
@@ -37,6 +37,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'client.fullName',
             'device.fullName',
             'summa',
+            'percent',
         ],
     ]) ?>
 

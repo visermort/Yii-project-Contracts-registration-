@@ -16,10 +16,10 @@ $this->registerJsFile('/assets/customjs/custom.js', ['depends' => [\yii\web\Jque
 
 <div class="buttons" style="margin-bottom: 15px;">
   <button class="btn btn-primary " data-toggle="modal" data-target="#clientModal">
-        Выбрать клиента
+        Select client
   </button>
     <button class="btn btn-primary " data-toggle="modal" data-target="#diviceModal">
-        Выбрать Устройство
+        Select device
   </button>
 
 </div>
@@ -35,7 +35,8 @@ $this->registerJsFile('/assets/customjs/custom.js', ['depends' => [\yii\web\Jque
     <? endif; ?>
     
   <?= $form->field($model, 'client_id')->hiddenInput(['readonly' => true,]) ?>
-   <input type="text" id="client_fullname" class="form-control" readonly value="<?=Clients::find()->where(['id' => $model->client_id])->one()->fullName?>" style="margin-bottom: 15px; margin-top: -15px;"> 
+  <? $client = Clients::find()->where(['id' => $model->client_id])->one();?>
+   <input type="text" id="client_fullname" class="form-control" readonly value="<?=$client? $client->fullName : "" ?>" style="margin-bottom: 15px; margin-top: -15px;"> 
 
 
 <!--   <div class="form-group field-contracts-client_id required">
@@ -55,7 +56,8 @@ $this->registerJsFile('/assets/customjs/custom.js', ['depends' => [\yii\web\Jque
     )?><? */ ?>
 
   <?= $form->field($model, 'device_id')->hiddenInput(['readonly' => true,]) ?>
-  <input type="text" id="device_fullname" class="form-control" readonly value="<?=Devices::find()->where(['id' => $model->device_id])->one()->fullName?>" style="margin-bottom: 15px; margin-top: -15px;"> 
+  <? $device = Devices::find()->where(['id' => $model->device_id])->one();?>
+  <input type="text" id="device_fullname" class="form-control" readonly value="<?=$device? $device->fullName : "" ?>" style="margin-bottom: 15px; margin-top: -15px;"> 
 
 <!--   <div class="form-group field-contracts-divice_id required">
     <label class="control-label" for="contracts-device_id">Устройство</label>
@@ -65,6 +67,8 @@ $this->registerJsFile('/assets/customjs/custom.js', ['depends' => [\yii\web\Jque
   </div> -->  
 
    <?= $form->field($model, 'summa')->textInput(['maxlength' => true, 'readonly' => true,] ) ?> 
+
+   <?= $form->field($model, 'percent')->textInput(['maxlength' => true, 'readonly' => true,] ) ?> 
 
 
   <div class="form-group">
@@ -82,12 +86,12 @@ $this->registerJsFile('/assets/customjs/custom.js', ['depends' => [\yii\web\Jque
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title" id="clientModalLabel">Выберите клиента</h4>
+        <h4 class="modal-title" id="clientModalLabel">Select client</h4>
       </div>
       <div class="modal-body">
         <div class="clients">
           <p>
-              <?= Html::a('Новый клиент', '/contracts/clients/create', ['class' => 'btn btn-success']) ?>
+              <?= Html::a('Add client', '/contracts/clients/create', ['class' => 'btn btn-success']) ?>
           </p>
             <?php Pjax::begin(); ?>    <?= GridView::widget([
                     'dataProvider' => $clientDataProvider,
@@ -96,14 +100,15 @@ $this->registerJsFile('/assets/customjs/custom.js', ['depends' => [\yii\web\Jque
                         ['class' => 'yii\grid\SerialColumn'],
                         //'id',
                         'name',
-                        'birth',
+                        //'birth',
                         'passport',
+                        'phone',
                         [
                           'class' => 'yii\grid\ActionColumn',
                           'template' => '{choose}',
                           'buttons' =>[
                             'choose' =>function ($url,$model,$key) {
-                              return Html::button('Выбрать',[
+                              return Html::button('Apply',[
                                 'class' => 'btn btn-primary btn-client-choose',
                                 'data' => [
                                     'id' => $model->id,
@@ -129,12 +134,12 @@ $this->registerJsFile('/assets/customjs/custom.js', ['depends' => [\yii\web\Jque
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title" id="deviceModalLabel">Выберите устройство</h4>
+        <h4 class="modal-title" id="deviceModalLabel">Select device</h4>
       </div>
       <div class="modal-body">
         <div class="devices">
           <p>
-              <?= Html::a('Новое устройство', '/contracts/devices/create', ['class' => 'btn btn-success']) ?>
+              <?= Html::a('Add devicd', '/contracts/devices/create', ['class' => 'btn btn-success']) ?>
           </p>
             <?php Pjax::begin(); ?>    <?= GridView::widget([
                     'dataProvider' => $deviceDataProvider,
@@ -151,12 +156,13 @@ $this->registerJsFile('/assets/customjs/custom.js', ['depends' => [\yii\web\Jque
                           'template' => '{choose}',
                           'buttons' =>[
                             'choose' =>function ($url,$model,$key) {
-                              return Html::button('Выбрать',[
+                              return Html::button('Apply',[
                                 'class' => 'btn btn-primary btn-device-choose',
                                 'data' => [
                                     'id' => $model->id,
                                     'fullname' => $model->fullName,
                                     'summa' => $model->summa,
+                                    'percent' => $model->percent,
                                   ],
                                 ]);
                             },

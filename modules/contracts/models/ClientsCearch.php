@@ -19,7 +19,7 @@ class ClientsCearch extends Clients
     {
         return [
             [['id'], 'integer'],
-            [['name', 'birth', 'passport'], 'safe'],
+            [['name', 'phone', 'passport'], 'safe'],
         ];
     }
 
@@ -60,11 +60,12 @@ class ClientsCearch extends Clients
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
-            'birth' => $this->birth,
+            
         ]);
 
         $query->andFilterWhere(['like', 'name', $this->name])
-            ->andFilterWhere(['like', 'passport', $this->passport]);
+            ->andFilterWhere(['like', 'passport', $this->passport])
+            ->andFilterWhere(['like', 'phone', $this->phone]);
 
         return $dataProvider;
     }

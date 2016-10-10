@@ -46,11 +46,11 @@ class Devices extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'model' => 'Модель',
+            'model' => 'Model',
             'emai' => 'IMEI',
-            'manufacturer' => 'Производитель',
-            'price' => 'Цена',
-            'fullName' => 'Устройство',
+            'manufacturer' => 'Marca',
+            'price' => 'Costul aparatului',
+            'fullName' => 'Părți',
         ];
     }
 
@@ -72,6 +72,12 @@ class Devices extends \yii\db\ActiveRecord
     public function getSumma()
     {
         return Summa::getSumma($this->price);
-
     }
+
+        //процент контракта для устойства
+    public function getPercent()
+    {
+        return Summa::getPercent($this->price);
+    }
+
 }

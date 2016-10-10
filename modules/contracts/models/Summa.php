@@ -18,9 +18,6 @@ class Summa
 	//public static function getSumma($id)
 	public static function getSumma($price)
 	{
-		//$device = Devices::find()->where(['id' => $id])->one();
-
-		//$price =  $device->price;
 
 		if ($price < 2401) {
 			$summa = 0;
@@ -35,5 +32,23 @@ class Summa
 		return $summa;
 
 	}
+	
+		public static function getPercent($price)
+	{
+		
+		if ($price < 2401) {
+			$percent = '';
+		} elseif ($price < 7001){
+			 $percent =  '14 (paisprezece)';
+		} elseif ($price < 15001) {
+			$spercent = '12 (douăsprezece)';
+		} else {
+			$percent = '10 (zece)';
+		}
+
+		return $percent;
+
+	}
+
 
 }

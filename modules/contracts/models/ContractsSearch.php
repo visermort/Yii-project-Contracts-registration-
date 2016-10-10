@@ -21,8 +21,9 @@ class ContractsSearch extends Contracts
     {
         return [
             [['id', 'client_id', 'device_id'], 'integer'],
-     //       [['date', 'clientName', 'devices'], 'safe'],
+            //[['date', 'clientName', 'devices'], 'safe'],
             [['summa'], 'number'],
+            [['percent'], 'safe']
         ];
     }
 
@@ -72,7 +73,9 @@ class ContractsSearch extends Contracts
             'client_id' => $this->client_id,
             'device_id' => $this->device_id,
             'summa' => $this->summa,
-        ])
+            //'percent' => $this->percent,
+        ]) 
+        ->andFilterWhere(['like', 'percent', $this->percent])
         //->andFilterWhere(['like', 'client.name', $this->clientName])
         ;
 

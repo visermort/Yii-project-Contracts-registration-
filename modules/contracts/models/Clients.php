@@ -29,8 +29,9 @@ class Clients extends \yii\db\ActiveRecord
     {
         return [
             [['name'], 'required'],
-            [['birth'], 'safe'],
+            [['phone', 'name', 'passport'], 'safe'],
             [['name', 'passport'], 'string', 'max' => 255],
+            [['phone'], 'string', 'max' => 32],
             [['name'], 'unique'],
         ];
     }
@@ -42,10 +43,10 @@ class Clients extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'name' => 'ФИО',
-            'birth' => 'Дата рождения',
-            'passport' => 'Паспортные данные',
-            'fullName' => 'Клиент',
+            'name' => 'N.P.',
+            'passport' => 'IDNP',
+            'fullName' => 'Client',
+            'phone' => 'Telefon mobil',
         ];
     }
 
@@ -60,7 +61,7 @@ class Clients extends \yii\db\ActiveRecord
 
     public function getFullName()
     {
-        return $this->name.', '.$this->birth.', passport '.$this->passport;
+        return $this->name.', passport '.$this->passport;
     }
 
 
