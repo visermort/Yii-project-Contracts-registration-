@@ -16,11 +16,6 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?= $this->render('_form', [
         'model' => $model,
-        'clientSearchModel' => $clientSearchModel,
-        'clientDataProvider' => $clientDataProvider,
-        'deviceSearchModel' => $deviceSearchModel,
-        'deviceDataProvider' => $deviceDataProvider,
-
     ]) ?>
 
 </div>

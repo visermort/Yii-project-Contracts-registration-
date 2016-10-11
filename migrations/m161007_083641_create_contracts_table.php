@@ -12,13 +12,20 @@ class m161007_083641_create_contracts_table extends Migration
      */
     public function up()
     {
-        $this->createTable('contracts', [
+        $this->createTable('mg_contracts', [
             'id' => $this->primaryKey(),
             'date' => $this->date()->notNull(),
-            'client_id' => $this->integer()->notNull(),
-            'device_id' => $this->integer()->notNull(),
-            'summa' => $this->decimal(10,2)->notNull()
-        ]);
+            'name' => $this->string(100)->notNull(),
+            'passport' => $this->string(100)->notNull(),
+            'phone' => $this->string(50),
+            'manufacturer' => $this->string(50)->notNull(),
+            'model' => $this->string(50)->notNull(),
+            'imei' => $this->string(50)->notNull(),
+            'price' => $this->decimal(10,2)->notNull(),
+            'percent' => $this->string(20)->notNull(),
+            'sum' => $this->integer()->notNull(),
+            'sale_point' => $this->string(50)->notNull(),
+         ]); 
     }
 
     /**
@@ -26,6 +33,6 @@ class m161007_083641_create_contracts_table extends Migration
      */
     public function down()
     {
-        $this->dropTable('contracts');
+        $this->dropTable('{{%table_name}}');
     }
 }

@@ -3,19 +3,22 @@
 namespace app\modules\contracts\models;
 
 use Yii;
-//use app\modules\contracts\models\Summa;
 
 /**
- * This is the model class for table "contracts".
+ * This is the model class for table "{{%contracts}}".
  *
  * @property integer $id
  * @property string $date
- * @property integer $client_id
- * @property integer $device_id
- * @property string $summa
- *
- * @property Devices $device
- * @property Clients $client
+ * @property string $name
+ * @property string $passport
+ * @property string $phone
+ * @property string $manufacturer
+ * @property string $model
+ * @property string $imei
+ * @property string $price
+ * @property string $percent
+ * @property integer $sum
+ * @property string $sale_point
  */
 class Contracts extends \yii\db\ActiveRecord
 {
@@ -24,7 +27,7 @@ class Contracts extends \yii\db\ActiveRecord
      */
     public static function tableName()
     {
-        return 'contracts';
+        return '{{%contracts}}';
     }
 
     /**
@@ -33,12 +36,13 @@ class Contracts extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['date', 'client_id', 'device_id', 'summa', 'percent'], 'required'],
+            [['date', 'name', 'passport', 'manufacturer', 'model', 'imei', 'price', 'percent', 'sum'], 'required'],
             [['date'], 'safe'],
-            [['client_id', 'device_id'], 'integer'],
-            [['summa'], 'number'],
-            [['device_id'], 'exist', 'skipOnError' => true, 'targetClass' => Devices::className(), 'targetAttribute' => ['device_id' => 'id']],
-            [['client_id'], 'exist', 'skipOnError' => true, 'targetClass' => Clients::className(), 'targetAttribute' => ['client_id' => 'id']],
+            [['price'], 'number'],
+            [['sum'], 'integer'],
+            [['name', 'passport'], 'string', 'max' => 100],
+            [['phone', 'manufacturer', 'model', 'imei'], 'string', 'max' => 50],
+            [['percent'], 'string', 'max' => 20],
         ];
     }
 
@@ -48,30 +52,19 @@ class Contracts extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => '№',
+            'id' => 'ID',
             'date' => 'Date',
-            'client_id' => 'Client',
-            'device_id' => 'Costul aparatului',
-            'summa' => 'Summa', 
+            'name' => 'N.P.',
+            'passport' => 'IDNP',
+            'phone' => 'Telefon mobil',
+            'manufacturer' => 'Marca',
+            'model' => 'Model',
+            'imei' => 'IMEI',
+            'price' => 'Costul aparatului',
             'percent' => 'Percent',
-            'sale_point' => 'Sale point',
+            'sum' => 'Summa',
+            'sale_point' => 'Sale Point',
         ];
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getDevice()
-    {
-        return $this->hasOne(Devices::className(), ['id' => 'device_id']);
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getClient()
-    {
-        return $this->hasOne(Clients::className(), ['id' => 'client_id']);
     }
 
     /**
@@ -93,6 +86,5 @@ class Contracts extends \yii\db\ActiveRecord
        }
        return false;
     }
-
 
 }

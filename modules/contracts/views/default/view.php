@@ -23,24 +23,26 @@ $this->params['breadcrumbs'][] = $this->title;
                 'method' => 'post',
             ],
         ]) ?>
-        <?= Html::a('PreviView', ['print-preview', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
 
         <?= Html::a('Print', ['print', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
 
-
     </p>
-    
+
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
             'id',
             'date',
-          //  'client_id',
-          //  'device_id',
-            'client.fullName',
-            'device.fullName',
-            'summa',
+            'name',
+            'passport',
+            'phone',
+            'manufacturer',
+            'model',
+            'imei',
+            'price',
             'percent',
+            'sum',
+           // 'sale_point',
         ],
     ]) ?>
 

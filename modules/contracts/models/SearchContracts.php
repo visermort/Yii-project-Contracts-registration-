@@ -8,22 +8,19 @@ use yii\data\ActiveDataProvider;
 use app\modules\contracts\models\Contracts;
 
 /**
- * ContractsSearch represents the model behind the search form about `app\modules\contracts\models\Contracts`.
+ * SearchContracts represents the model behind the search form about `app\modules\contracts\models\Contracts`.
  */
-class ContractsSearch extends Contracts
+class SearchContracts extends Contracts
 {
-   // public $devices;
-   // public $clientName;
     /**
      * @inheritdoc
      */
     public function rules()
     {
         return [
-            [['id', 'client_id', 'device_id'], 'integer'],
-            //[['date', 'clientName', 'devices'], 'safe'],
-            [['summa'], 'number'],
-            [['percent'], 'safe']
+            [['id', 'sum'], 'integer'],
+            [['date', 'name', 'passport', 'phone', 'manufacturer', 'model', 'imei', 'percent', 'sale_point'], 'safe'],
+            [['price'], 'number'],
         ];
     }
 
@@ -45,18 +42,13 @@ class ContractsSearch extends Contracts
      */
     public function search($params)
     {
-        $query = Contracts::find()->with('client','device');
+        $query = Contracts::find();
 
         // add conditions that should always apply here
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
         ]);
-
-    //    $dataProvider -> sort->attributes['clientName'] = [
-    //        'asc' => ['client.name' => SORT_ASC],
-    //        'desc' => ['client.name' => SORT_DESC],
-//        ];
 
         $this->load($params);
 
@@ -70,14 +62,18 @@ class ContractsSearch extends Contracts
         $query->andFilterWhere([
             'id' => $this->id,
             'date' => $this->date,
-            'client_id' => $this->client_id,
-            'device_id' => $this->device_id,
-            'summa' => $this->summa,
-            //'percent' => $this->percent,
-        ]) 
-        ->andFilterWhere(['like', 'percent', $this->percent])
-        //->andFilterWhere(['like', 'client.name', $this->clientName])
-        ;
+            'price' => $this->price,
+            'sum' => $this->sum,
+        ]);
+
+        $query->andFilterWhere(['like', 'name', $this->name])
+            ->andFilterWhere(['like', 'passport', $this->passport])
+            ->andFilterWhere(['like', 'phone', $this->phone])
+            ->andFilterWhere(['like', 'manufacturer', $this->manufacturer])
+            ->andFilterWhere(['like', 'model', $this->model])
+            ->andFilterWhere(['like', 'imei', $this->imei])
+            ->andFilterWhere(['like', 'percent', $this->percent])
+            ->andFilterWhere(['like', 'sale_point', $this->sale_point]);
 
         return $dataProvider;
     }

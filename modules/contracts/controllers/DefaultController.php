@@ -4,9 +4,7 @@ namespace app\modules\contracts\controllers;
 
 use Yii;
 use app\modules\contracts\models\Contracts;
-use app\modules\contracts\models\ContractsSearch;
-use app\modules\contracts\models\ClientsCearch;
-use app\modules\contracts\models\DevicesSearch;
+use app\modules\contracts\models\SearchContracts;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -43,6 +41,7 @@ class DefaultController extends Controller
                     ],
                 ],
             ],
+
         ];
     }
 
@@ -52,9 +51,9 @@ class DefaultController extends Controller
      */
     public function actionIndex()
     {
-        $searchModel = new ContractsSearch();
+        $searchModel = new SearchContracts();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-       // print_r($dataProvider);
+
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
@@ -80,11 +79,6 @@ class DefaultController extends Controller
      */
     public function actionCreate()
     {
-       
-        $clientSearchModel = new ClientsCearch();
-        $clientDataProvider = $clientSearchModel->search(Yii::$app->request->queryParams);
-        $deviceSearchModel = new DevicesSearch();
-        $deviceDataProvider = $deviceSearchModel->search(Yii::$app->request->queryParams);
         $model = new Contracts();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
@@ -92,11 +86,6 @@ class DefaultController extends Controller
         } else {
             return $this->render('create', [
                 'model' => $model,
-                'clientSearchModel' => $clientSearchModel,
-                'clientDataProvider' => $clientDataProvider,
-                'deviceSearchModel' => $deviceSearchModel,
-                'deviceDataProvider' => $deviceDataProvider,
-
             ]);
         }
     }
@@ -109,10 +98,6 @@ class DefaultController extends Controller
      */
     public function actionUpdate($id)
     {
-        $clientSearchModel = new ClientsCearch();
-        $clientDataProvider = $clientSearchModel->search(Yii::$app->request->queryParams);
-        $deviceSearchModel = new DevicesSearch();
-        $deviceDataProvider = $deviceSearchModel->search(Yii::$app->request->queryParams);
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
@@ -120,11 +105,6 @@ class DefaultController extends Controller
         } else {
             return $this->render('update', [
                 'model' => $model,
-                'clientSearchModel' => $clientSearchModel,
-                'clientDataProvider' => $clientDataProvider,
-                'deviceSearchModel' => $deviceSearchModel,
-                'deviceDataProvider' => $deviceDataProvider,
-                
             ]);
         }
     }
@@ -158,14 +138,6 @@ class DefaultController extends Controller
         }
     }
 
-    public function actionPrintPreview($id)
-    {
-        return $this->renderPartial('print', [
-            'model' => $this->findModel($id),
-        ]);
-
-    }
-
     public function actionPrint($id)
     {
  
@@ -174,7 +146,7 @@ class DefaultController extends Controller
         ]);
         $pdf = new Pdf([
         // set to use core fonts only
-            'mode' => '', 
+            'mode' => 'Pdf::MODE_CORE', 
             // A4 paper format
             'format' => Pdf::FORMAT_A4, 
              // portrait orientation
@@ -202,7 +174,7 @@ class DefaultController extends Controller
 
     }
 
-    public function actionExcell()
+        public function actionExcell()
     {
         $file = \Yii::createObject([
             'class' => 'codemix\excelexport\ExcelFile',
@@ -217,14 +189,14 @@ class DefaultController extends Controller
                     'attributes' => [
                         'id',
                         'date',
-                        'client.name',
-                        'client.passport',
-                        'client.phone',    
-                        'device.manufacturer',
-                        'device.model',
-                        'device.emai',
-                        'device.price',
-                        'summa',
+                        'name',
+                        'passport',
+                        'phone',    
+                        'manufacturer',
+                        'model',
+                        'imei',
+                        'price',
+                        'sum',
                         'percent',
                         'sale_point',
 
@@ -257,4 +229,5 @@ class DefaultController extends Controller
         }
         $file->send('demo.xlsx');
     }
+
 }
