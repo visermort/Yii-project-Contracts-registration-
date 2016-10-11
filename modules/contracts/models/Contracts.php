@@ -54,6 +54,7 @@ class Contracts extends \yii\db\ActiveRecord
             'device_id' => 'Costul aparatului',
             'summa' => 'Summa', 
             'percent' => 'Percent',
+            'sale_point' => 'Sale point',
         ];
     }
 
@@ -80,6 +81,17 @@ class Contracts extends \yii\db\ActiveRecord
     public static function find()
     {
         return new ContractsQuery(get_called_class());
+    }
+
+    public function beforeSave($insert)
+    {
+       if(parent::beforeSave($insert)) {
+           if ($insert) {
+                $this->sale_point = $_SESSION['contracts_sailes_point']; 
+           }
+           return true;
+       }
+       return false;
     }
 
 

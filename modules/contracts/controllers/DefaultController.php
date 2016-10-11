@@ -226,6 +226,7 @@ class DefaultController extends Controller
                         'device.price',
                         'summa',
                         'percent',
+                        'sale_point',
 
                     ],
 
@@ -248,7 +249,7 @@ class DefaultController extends Controller
 
         // $phpExcell->getSheet(0)->getColumnDimensionByColumn(1)->setAutoSize(false);
         // $phpExcell->getSheet(0)->getColumnDimensionByColumn(1)->setWidth(15);
-        foreach (range(0, 10) as $col) {
+        foreach (range(0, 11) as $col) {
             $phpExcell
                     ->getSheet(0)
                     ->getColumnDimensionByColumn($col)

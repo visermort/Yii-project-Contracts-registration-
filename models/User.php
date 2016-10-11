@@ -10,6 +10,7 @@ class User extends \yii\base\Object implements \yii\web\IdentityInterface
     public $authKey;
     public $accessToken;
 
+
     private static $users = [
         '100' => [
             'id' => '100',
@@ -56,10 +57,11 @@ class User extends \yii\base\Object implements \yii\web\IdentityInterface
      * @param string $username
      * @return static|null
      */
-    public static function findByUsername($username)
+    public static function findByUsername($username, $salesPoint)
     {
         foreach (self::$users as $user) {
             if (strcasecmp($user['username'], $username) === 0) {
+                $_SESSION['contracts_sailes_point'] = $salesPoint;
                 return new static($user);
             }
         }
