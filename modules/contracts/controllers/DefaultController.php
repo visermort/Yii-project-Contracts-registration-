@@ -12,6 +12,8 @@ use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 use kartik\mpdf\Pdf;
+use codemix\yii2Excelexport;
+use mikehaertl\phpTmpfile;
 
 /**
  * DefaultController implements the CRUD actions for Contracts model.
@@ -32,10 +34,10 @@ class DefaultController extends Controller
             ],
             'access' => [
                 'class' => AccessControl::className(),
-                'only' => ['index','view','create','update','delete'],
+                'only' => ['index','view','create','update','delete', 'print', 'printPreview', 'excell'],
                 'rules' => [
                     [
-                        'actions' => ['index','view','create','update','delete'],
+                        'actions' => ['index','view','create','update','delete', 'print', 'printPreview', 'excell'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -198,5 +200,60 @@ class DefaultController extends Controller
         // return the pdf output as per the destination setting
         return $pdf->render(); 
 
+    }
+
+    public function actionExcell()
+    {
+        $file = \Yii::createObject([
+            'class' => 'codemix\excelexport\ExcelFile',
+
+            'writer' => '\PHPExcel_Writer_Excel2007', // Override default of `\PHPExcel_Writer_Excel2007`
+            'sheets' => [
+                'Contracts' => [
+                    'class' => 'codemix\excelexport\ActiveExcelSheet',
+                    'query' => Contracts::find(),
+
+                    // If not specified, all attributes from `User::attributes()` are used
+                    'attributes' => [
+                        'id',
+                        'date',
+                        'client.name',
+                        'client.passport',
+                        'client.phone',    
+                        'device.manufacturer',
+                        'device.model',
+                        'device.emai',
+                        'device.price',
+                        'summa',
+                        'percent',
+
+                    ],
+
+                    // If not specified, the label from the respective record is used.
+                    // You can also override single titles, like here for the above `team.name`
+                    // 'titles' => [
+                    //     'D' => 'Team Name',
+                    // ],
+                    'batchSize' => 100000, 
+                ],
+
+
+
+            ],
+
+
+
+        ]);
+        $phpExcell = $file->getWorkbook();
+
+        // $phpExcell->getSheet(0)->getColumnDimensionByColumn(1)->setAutoSize(false);
+        // $phpExcell->getSheet(0)->getColumnDimensionByColumn(1)->setWidth(15);
+        foreach (range(0, 10) as $col) {
+            $phpExcell
+                    ->getSheet(0)
+                    ->getColumnDimensionByColumn($col)
+                    ->setAutoSize(true);
+        }
+        $file->send('demo.xlsx');
     }
 }

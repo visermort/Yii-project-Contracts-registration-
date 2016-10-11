@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "fc55a880db2fd0f58470ec3d7df0a3ad",
-    "content-hash": "38eb0e9d8cd8d73d1c989c6d60256939",
+    "hash": "7cb7fd6767ba6dbb37d9931c1ca7ccbc",
+    "content-hash": "009da001440112ed84c218ad1bf89657",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -307,6 +307,49 @@
                 "markdown-extra"
             ],
             "time": "2016-09-14 20:40:20"
+        },
+        {
+            "name": "codemix/yii2-excelexport",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/codemix/yii2-excelexport.git",
+                "reference": "7959054ca07d01ed36059e2e4854901deac3d392"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/codemix/yii2-excelexport/zipball/7959054ca07d01ed36059e2e4854901deac3d392",
+                "reference": "7959054ca07d01ed36059e2e4854901deac3d392",
+                "shasum": ""
+            },
+            "require": {
+                "mikehaertl/php-tmpfile": "^1.0.0",
+                "phpoffice/phpexcel": "1.*",
+                "yiisoft/yii2": "*"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "codemix\\excelexport\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Härtl",
+                    "email": "haertl.mike@gmail.com"
+                }
+            ],
+            "description": "A utility to quickly create Excel files from query results or raw data",
+            "keywords": [
+                "excel",
+                "export",
+                "yii2"
+            ],
+            "time": "2016-08-03 06:57:09"
         },
         {
             "name": "ezyang/htmlpurifier",
@@ -653,6 +696,42 @@
                 "yii2"
             ],
             "time": "2014-11-10 18:09:37"
+        },
+        {
+            "name": "mikehaertl/php-tmpfile",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mikehaertl/php-tmpfile.git",
+                "reference": "b1b013cc29a8ee0423994b286d22e3aed6640d4e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mikehaertl/php-tmpfile/zipball/b1b013cc29a8ee0423994b286d22e3aed6640d4e",
+                "reference": "b1b013cc29a8ee0423994b286d22e3aed6640d4e",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "mikehaertl\\tmp\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Härtl",
+                    "email": "haertl.mike@gmail.com"
+                }
+            ],
+            "description": "A convenience class for temporary files",
+            "keywords": [
+                "files"
+            ],
+            "time": "2016-07-07 05:59:42"
         },
         {
             "name": "phpoffice/phpexcel",
