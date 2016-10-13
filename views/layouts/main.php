@@ -84,7 +84,7 @@ AppAsset::register($this);
         <p class="pull-left">&copy; SmartGuard <?= date('Y') ?></p>
 
         <div id="copyright-pixelplus" style="width: 225px;height:60px;float:right; margin-top: -13px;">
-            <?php if($this->params['homePage']) {?>
+            <?php if(isset($this->params['homePage']) &&  $this->params['homePage']) {?>
                 <div id="copyright-img-first" style="float:left;width: 40px; ">
                     <a href="http://www.pixelplus.ru/" target="pixel"><img src="http://vorota-pik.pixelproject.ru/wp-content/uploads/2016/10/pixelplus-red.png" border="0" height="45" alt="Компания «ПиксельПлюс»" title="Компания «ПиксельПлюс»"
                     /></a>
