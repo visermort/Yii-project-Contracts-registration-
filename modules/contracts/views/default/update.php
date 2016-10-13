@@ -5,7 +5,7 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\modules\contracts\models\Contracts */
 
-$this->title = 'Update Contracts: ' . '#'.$model->id.' from '.$model->date;
+$this->title = 'Update Contract: ' . '#'.$model->id.' from '.$model->date;
 $this->params['breadcrumbs'][] = ['label' => 'Contracts', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => '#'.$model->id.' from '.$model->date, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = 'Update';

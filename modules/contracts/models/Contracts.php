@@ -54,7 +54,7 @@ class Contracts extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'date' => 'Date',
-            'name' => 'N.P.',
+            'name' => 'Nume Prenume',
             'passport' => 'IDNP',
             'phone' => 'Telefon mobil',
             'manufacturer' => 'Marca',

@@ -22,41 +22,54 @@ AppAsset::register($this);
     <?php $this->head() ?>
 </head>
 <body>
+
 <?php $this->beginBody() ?>
 
+
 <div class="wrap">
-    <?php
-    NavBar::begin([
-        'brandLabel' => 'SRL „MOBILE-GUARD”',
-        'brandUrl' => Yii::$app->homeUrl,
-        'options' => [
-            'class' => 'navbar-inverse navbar-fixed-top',
-        ],
-    ]);
-    echo Nav::widget([
-        'options' => ['class' => 'navbar-nav navbar-right'],
-        'items' => [
-            
-            ['label' => 'Contracts', 'url' => ['/contracts']],
-            ['label' => 'Export', 'url' => ['/contracts/excell']],
-           //['label' => 'About', 'url' => ['/site/about']],
-           // ['label' => 'Contact', 'url' => ['/site/contact']],
-            Yii::$app->user->isGuest ? (
-                ['label' => 'Login', 'url' => ['/site/login']]
-            ) : (
-                '<li>'
-                . Html::beginForm(['/site/logout'], 'post', ['class' => 'navbar-form'])
-                . Html::submitButton(
-                    'Logout (' . Yii::$app->user->identity->username . ')',
-                    ['class' => 'btn btn-link']
+    <div class="container">
+
+        <?php
+        NavBar::begin([
+             'brandLabel' => Html::img('@web/assets/img/smart_guard_logo.png', ['alt'=>'SmartGuard', 'style' => 'max-height: 45px; margin-top: -12px;']),
+            //'brandLabel' => 'SmartGuard',
+            'brandUrl' => Yii::$app->homeUrl,
+            'options' => [
+                'class' => 'navbar-inverse navbar-fixed-top',
+            ],
+        ]);
+        echo Nav::widget([
+                'options' => ['class' => 'navbar-nav navbar-left'],
+                'items' => [
+                    ['label' => 'SmartGuard', 'url' => ['/']],
+                ],
+
+            ]);
+        echo Nav::widget([
+            'options' => ['class' => 'navbar-nav navbar-right'],
+            'items' => [
+                
+                ['label' => 'Contracts', 'url' => ['/contracts']],
+                ['label' => 'Export', 'url' => ['/contracts/excell']],
+               //['label' => 'About', 'url' => ['/site/about']],
+               // ['label' => 'Contact', 'url' => ['/site/contact']],
+                Yii::$app->user->isGuest ? (
+                    ['label' => 'Login', 'url' => ['/site/login']]
+                ) : (
+                    '<li>'
+                    . Html::beginForm(['/site/logout'], 'post', ['class' => 'navbar-form'])
+                    . Html::submitButton(
+                        'Logout (' . Yii::$app->user->identity->username . ')',
+                        ['class' => 'btn btn-link']
+                    )
+                    . Html::endForm()
+                    . '</li>'
                 )
-                . Html::endForm()
-                . '</li>'
-            )
-        ],
-    ]);
-    NavBar::end();
-    ?>
+            ],
+        ]);
+        NavBar::end();
+        ?>
+    </div>
 
     <div class="container">
         <?= Breadcrumbs::widget([
@@ -68,9 +81,30 @@ AppAsset::register($this);
 
 <footer class="footer">
     <div class="container">
-        <p class="pull-left">&copy; SRL „MOBILE-GUARD” <?= date('Y') ?></p>
+        <p class="pull-left">&copy; SmartGuard <?= date('Y') ?></p>
 
-        <p class="pull-right">Powered by PixelPlus</p>
+        <div id="copyright-pixelplus" style="width: 225px;height:60px;float:right; margin-top: -13px;">
+            <?php if($this->params['homePage']) {?>
+                <div id="copyright-img-first" style="float:left;width: 40px; ">
+                    <a href="http://www.pixelplus.ru/" target="pixel"><img src="http://vorota-pik.pixelproject.ru/wp-content/uploads/2016/10/pixelplus-red.png" border="0" height="45" alt="Компания «ПиксельПлюс»" title="Компания «ПиксельПлюс»"
+                    /></a>
+                </div>
+                <div id="copyright-text-first" style="width: 175px;padding-left: 8px;float: right;color: #000;text-align: left;font-family: Arial, Helvetica;font-size: 12px;">
+                    <a href="http://www.pixelplus.ru/" target="pixel">Создание сайта</a> &mdash;<br>
+                        компания «Пиксель Плюс»
+                </div>
+            <?} else {?>
+            <div id="copyright-img-second" style="float:left;width: 40px;">
+                <a href="http://www.pixelplus.ru/" target="pixel"><img src="http://vorota-pik.pixelproject.ru/wp-content/uploads/2016/10/pixelplus-red.png" border="0"
+                height="45" alt="Компания «Пиксель Плюс»" title="Компания «Пиксель Плюс»"
+                /></a>
+            </div>
+            <div id="copyright-text-second" style="width: 175px;padding-left: 8px;float: right;color: #000;text-align: left;font-family: Arial, Helvetica;font-size: 12px;">
+                Создание сайта &mdash;<br/>
+                компания «Пиксель Плюс»
+            </div>
+            <? } ?> 
+        <div>
     </div>
 </footer>
 

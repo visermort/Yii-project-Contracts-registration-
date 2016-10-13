@@ -43,14 +43,12 @@ $config = [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
-            '/' => 'site/index',
-            'contracts' => 'contracts/default/index',
-            'contracts/clients' => 'contracts/clients/',
-            'contracts/devices' => 'contracts/devices/',
-            'contracts/<action:\w+>' => 'contracts/default/<action>',
-            '<action:\w+>' => 'site/<action>',
-
-             
+                '/' => 'site/index',
+                'contracts' => 'contracts/default/index',
+                'contracts/clients' => 'contracts/clients/',
+                'contracts/devices' => 'contracts/devices/',
+                'contracts/<action:\w+>' => 'contracts/default/<action>',
+                '<action:\w+>' => 'site/<action>',
             ],
         ],
         

@@ -16,7 +16,7 @@ $this->registerJsFile('/assets/customjs/custom.js', ['depends' => [\yii\web\Jque
 
     <!-- <?= $form->field($model, 'date')->textInput() ?> -->
     <? if ($model->isNewRecord):?>
-      <?= $form->field($model, 'date')->textInput(['value' => date('Y-m-d')]) ?>
+      <?= $form->field($model, 'date')->textInput(['value' => date('Y-m-d'), 'readonly' => true]) ?>
     <? else :?>
       <?= $form->field($model, 'date')->textInput() ?>
     <? endif; ?>

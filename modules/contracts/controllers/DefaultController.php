@@ -141,7 +141,7 @@ class DefaultController extends Controller
     public function actionPrint($id)
     {
  
-        $content = $this->renderPartial('_print', [
+        $content = $this->renderPartial('_printRoman', [
             'model' => $this->findModel($id),
         ]);
         $pdf = new Pdf([
