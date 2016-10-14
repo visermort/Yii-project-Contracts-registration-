@@ -230,4 +230,13 @@ class DefaultController extends Controller
         $file->send('demo.xlsx');
     }
 
+    public function actionPreview($id) {
+
+        return $this->renderPartial('_printRoman', [
+            'model' => $this->findModel($id),
+        ]);
+
+    }
+
+
 }

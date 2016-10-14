@@ -20,7 +20,8 @@
         "yiisoft/yii2-swiftmailer": "*",
         "kartik-v/yii2-export": "@dev",
         "kartik-v/yii2-mpdf": "*",
-        "codemix/yii2-excelexport": "*"
+        "codemix/yii2-excelexport": "*",
+        "google/apiclient": "2.0"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",

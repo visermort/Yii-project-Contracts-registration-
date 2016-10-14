@@ -89,80 +89,68 @@
 <p><strong>3.  DREPTURILE ȘI OBLIGAȚIILE PĂRȚILOR  </strong></p>
 
 <p>3.1 Clientul are dreptul:</p>
-<ul>
-<li>Să se folosească de serviciile Companiei și să solicite executarea lor &icirc;n conformitate cu procedura prevăzută de capitolul 2 al prezentului Regulament.</li>
-<li>Să informeze Compania despre toate neajunsurile lucrărilor &icirc;ndeplinite și ale deservirii.</li>
-<li>Să rezilieze &icirc;n orice moment Contractul cu Compania &icirc;n temeiul și &icirc;n modul prevăzute de prezentul Regulament și legislația &icirc;n vigoare.</li>
-<li>Să obțină informații complete și veridice despre executarea serviciilor și termenii acestei executări de către Companie &icirc;n privința Dispozitivului electronic cu care Clientul s-a adresat către Companie pentru deservire pe durata Contractului .</li>
-<li>Să solicite Companiei respectarea strictă a ordinii și termenilor de prestare a serviciilor &icirc;n limitele Contractului .</li>
-<li>La primirea Dispozitivului electronic reparat sau &icirc;nlocuit din partea Companiei să-l testeze, și, &icirc;n cazul unor pretenții justificate cu privire la funcționarea acestuia, să &icirc;nainteze aceste pretenții &icirc;n formă scrisă (se admite expedierea copiei scanate electronice a acestei cereri) &icirc;ntr-un termen ce nu depășește 24 de ore din momentul primirii Dispozitivului electronic. &Icirc;n cazul &icirc;n care &icirc;n decursul acestei perioade Clientul nu &icirc;naintează pretenții &ndash; Dispozitivul electronic se consideră predat de către Companie și primit de către Client, iar obligațiile Companiei &icirc;n cadrul adresării Clientului &icirc;n temeiul Contractului se consideră executate &icirc;n mod corespunzător.</li>
-</ul>
-</li>
-</ul>
+
+<p>3.1.1 Să se folosească de serviciile Companiei și să solicite executarea lor &icirc;n conformitate cu procedura prevăzută de capitolul 2 al prezentului Regulament.</p>
+<p>3.1.2 Să informeze Compania despre toate neajunsurile lucrărilor &icirc;ndeplinite și ale deservirii.</p>
+<p>3.1.3 Să rezilieze &icirc;n orice moment Contractul cu Compania &icirc;n temeiul și &icirc;n modul prevăzute de prezentul Regulament și legislația &icirc;n vigoare.</p>
+<p>3.1.4 Să obțină informații complete și veridice despre executarea serviciilor și termenii acestei executări de către Companie &icirc;n privința Dispozitivului electronic cu care Clientul s-a adresat către Companie pentru deservire pe durata Contractului .</p>
+<p>3.1.5 Să solicite Companiei respectarea strictă a ordinii și termenilor de prestare a serviciilor &icirc;n limitele Contractului .</p>
+<p>3.1.6 La primirea Dispozitivului electronic reparat sau &icirc;nlocuit din partea Companiei să-l testeze, și, &icirc;n cazul unor pretenții justificate cu privire la funcționarea acestuia, să &icirc;nainteze aceste pretenții &icirc;n formă scrisă (se admite expedierea copiei scanate electronice a acestei cereri) &icirc;ntr-un termen ce nu depășește 24 de ore din momentul primirii Dispozitivului electronic. &Icirc;n cazul &icirc;n care &icirc;n decursul acestei perioade Clientul nu &icirc;naintează pretenții &ndash; Dispozitivul electronic se consideră predat de către Companie și primit de către Client, iar obligațiile Companiei &icirc;n cadrul adresării Clientului &icirc;n temeiul Contractului se consideră executate &icirc;n mod corespunzător.</p>
+
+
+<p>3.2 Clientul se obligă:</p>
+
+<p>3.2.1 Să respecte condițiile contractuale.</p>
+<p>3.2.2 Să comunice Companiei (reprezentantului Companiei) numărul veridic al telefonului de contract la &icirc;ncheierea contractului.</p>
+<p>3.2.3 Să utilizeze cu grijă Dispozitivul electronic care constituie obiectul Contractului , să respecte toate recomandările și instrucțiunile producătorului de utilizare a acestui dispozitiv, să nu admită neglijență și nepăsare &icirc;n privința acestui dispozitiv, să-l folosească numai conform destinației sale directe. Părțile au convenit că, dacă &icirc;n cazul adresării Clientului pentru deservire pe faptul deteriorării sau pierderii Dispozitivului electronic, Compania va stabili cu certitudine că, cauza deteriorării sau pierderii Dispozitivului electronic este neexecutarea (executarea necorespunzătoare) de către Client a obligațiilor sale, Compania este &icirc;n drept să refuze repararea sau &icirc;nlocuirea acestui dispozitiv.</p>
+<p>3.2.4 Să aplice pe dispozitiv o sticlă de protecție sau un film protector de calitate corespunzătoare. Părțile au convenit că, dacă la adresarea Clientului pentru deservire pe faptul deteriorării sau distrugerii constructive complete a Dispozitivului electronic, Compania va stabili cu certitudine lipsa sticlei de protecție sau a filmului protector pe dispozitiv, Compania este &icirc;n drept să refuze repararea sau &icirc;nlocuirea acestui dispozitiv.</p>
+<p>3.2.5 Să primească la timp și fără &icirc;nt&icirc;rziere Dispozitivul electronic reparat sau &icirc;nlocuit de la Companie sau Partenerii acesteia &icirc;n caz de colaborare &icirc;n limitele adresării sale către Companie pentru deservire.</p>
+<p>3.2.6 &Icirc;n cazul &icirc;n care &icirc;n cadrul executării obligațiilor sale privind adresarea Clientului pentru deservire, Compania a realizat toate acțiunile necesare pentru asigurarea primirii de către Client a serviciilor &icirc;n temeiul contractului , iar Clientul la r&icirc;ndul său nu &icirc;ntreprinde nici o acțiune orientată spre primirea acestor servicii și această &icirc;nt&icirc;rziere durează mai bine de 60 de zile calendaristice fără vreun motiv &icirc;ntemeiat, Compania este &icirc;n dept să rezilieze Contractul &icirc;n ordine unilaterală, notific&icirc;nd Clientul despre reziliere &icirc;n ordinea prevăzută la punctul 2.8.5 al prezentului Regulament.</p>
+<p>3.2.7 La primirea Dispozitivului electronic reparat sau &icirc;nlocuit din partea Companiei să-l testeze, și, &icirc;n cazul unor pretenții justificate cu privire la funcționarea acestuia, să &icirc;nainteze aceste pretenții &icirc;n formă scrisă (se admite expedierea copiei scanate electronice a acestei cereri) &icirc;ntr-un termen ce nu depășește 24 de ore din momentul primirii Dispozitivului electronic. &Icirc;n cazul &icirc;n care &icirc;n decursul acestei perioade Clientul nu &icirc;naintează pretenții &ndash; Dispozitivul electronic se consideră predat de către Companie și primit de către Client, iar obligațiile Companiei &icirc;n cadrul adresării Clientului &icirc;n temeiul Contractului se consideră executate &icirc;n mod corespunzător.</p>
+
 <p>&nbsp;</p>
-<ul>
-<li>Clientul se obligă:
-<ul>
-<li>Să respecte condițiile contractuale.</li>
-<li>Să comunice Companiei (reprezentantului Companiei) numărul veridic al telefonului de contract la &icirc;ncheierea contractului.</li>
-<li>Să utilizeze cu grijă Dispozitivul electronic care constituie obiectul Contractului , să respecte toate recomandările și instrucțiunile producătorului de utilizare a acestui dispozitiv, să nu admită neglijență și nepăsare &icirc;n privința acestui dispozitiv, să-l folosească numai conform destinației sale directe. Părțile au convenit că, dacă &icirc;n cazul adresării Clientului pentru deservire pe faptul deteriorării sau pierderii Dispozitivului electronic, Compania va stabili cu certitudine că, cauza deteriorării sau pierderii Dispozitivului electronic este neexecutarea (executarea necorespunzătoare) de către Client a obligațiilor sale, Compania este &icirc;n drept să refuze repararea sau &icirc;nlocuirea acestui dispozitiv.</li>
-<li>Să aplice pe dispozitiv o sticlă de protecție sau un film protector de calitate corespunzătoare. Părțile au convenit că, dacă la adresarea Clientului pentru deservire pe faptul deteriorării sau distrugerii constructive complete a Dispozitivului electronic, Compania va stabili cu certitudine lipsa sticlei de protecție sau a filmului protector pe dispozitiv, Compania este &icirc;n drept să refuze repararea sau &icirc;nlocuirea acestui dispozitiv.</li>
-<li>Să primească la timp și fără &icirc;nt&icirc;rziere Dispozitivul electronic reparat sau &icirc;nlocuit de la Companie sau Partenerii acesteia &icirc;n caz de colaborare &icirc;n limitele adresării sale către Companie pentru deservire.</li>
-<li>&Icirc;n cazul &icirc;n care &icirc;n cadrul executării obligațiilor sale privind adresarea Clientului pentru deservire, Compania a realizat toate acțiunile necesare pentru asigurarea primirii de către Client a serviciilor &icirc;n temeiul contractului , iar Clientul la r&icirc;ndul său nu &icirc;ntreprinde nici o acțiune orientată spre primirea acestor servicii și această &icirc;nt&icirc;rziere durează mai bine de 60 de zile calendaristice fără vreun motiv &icirc;ntemeiat, Compania este &icirc;n dept să rezilieze Contractul &icirc;n ordine unilaterală, notific&icirc;nd Clientul despre reziliere &icirc;n ordinea prevăzută la punctul 2.8.5 al prezentului Regulament.</li>
-<li>La primirea Dispozitivului electronic reparat sau &icirc;nlocuit din partea Companiei să-l testeze, și, &icirc;n cazul unor pretenții justificate cu privire la funcționarea acestuia, să &icirc;nainteze aceste pretenții &icirc;n formă scrisă (se admite expedierea copiei scanate electronice a acestei cereri) &icirc;ntr-un termen ce nu depășește 24 de ore din momentul primirii Dispozitivului electronic. &Icirc;n cazul &icirc;n care &icirc;n decursul acestei perioade Clientul nu &icirc;naintează pretenții &ndash; Dispozitivul electronic se consideră predat de către Companie și primit de către Client, iar obligațiile Companiei &icirc;n cadrul adresării Clientului &icirc;n temeiul Contractului se consideră executate &icirc;n mod corespunzător.</li>
-</ul>
-</li>
-</ul>
+
+<p>3.3 Compania are dreptul:</p>
+<p>3.3.1 Să presteze serviciile prevăzute de Volumul de servicii &icirc;n baza Contractului , at&icirc;t cu forțele proprii, c&icirc;t și cu forțele și din contul Partenerilor (reprezentanților) Companiei.</p>
+<p>3.3.2 Prin toate mijloacele legale să verifice informațiile furnizate de Client (la &icirc;ncheierea Contractului, la Adresarea pentru deservire), precum și executarea de către Client a condițiilor Contractului și a prezentului Regulament. &nbsp;</p>
+<p>3.3.3 Să examineze și să efectueze acțiuni de diagnosticare a Dispozitivului electronic, cu care Clientul s-a adresat pentru deservire.</p>
+<p>3.3.4 Să refuze Clientului repararea sau &icirc;nlocuirea Dispozitivului electronic &icirc;n ordinea punctelor 4.3. ale prezentului Contract.</p>
+<p>3.3.5 La &icirc;ncetarea &icirc;nainte de termen a Contractului .</p>
+<p>3.3.6 &Icirc;n cazul &icirc;n care Clientul &icirc;ncalcă obligația &icirc;n cadrul Contractului, prevăzută de punctul 4.2. al prezentului Regulament, Compania la expirarea termenului de 180 de zile din ziua pregătirii Dispozitivului electronic pentru eliberare Clientului este &icirc;n drept la aprecierea sa să dispună de acest Dispozitiv electronic. Totodată contractul &icirc;ncheiat &icirc;ntre Companie și acest client nu mai este valabil.</p>
+
 <p>&nbsp;</p>
-<ul>
-<li>Compania are dreptul:
-<ul>
-<li>Să presteze serviciile prevăzute de Volumul de servicii &icirc;n baza Contractului , at&icirc;t cu forțele proprii, c&icirc;t și cu forțele și din contul Partenerilor (reprezentanților) Companiei.</li>
-<li>Prin toate mijloacele legale să verifice informațiile furnizate de Client (la &icirc;ncheierea Contractului, la Adresarea pentru deservire), precum și executarea de către Client a condițiilor Contractului și a prezentului Regulament. &nbsp;</li>
-<li>Să examineze și să efectueze acțiuni de diagnosticare a Dispozitivului electronic, cu care Clientul s-a adresat pentru deservire.</li>
-<li>Să refuze Clientului repararea sau &icirc;nlocuirea Dispozitivului electronic &icirc;n ordinea punctelor 4.3. ale prezentului Contract.</li>
-<li>La &icirc;ncetarea &icirc;nainte de termen a Contractului .</li>
-<li>&Icirc;n cazul &icirc;n care Clientul &icirc;ncalcă obligația &icirc;n cadrul Contractului, prevăzută de punctul 4.2. al prezentului Regulament, Compania la expirarea termenului de 180 de zile din ziua pregătirii Dispozitivului electronic pentru eliberare Clientului este &icirc;n drept la aprecierea sa să dispună de acest Dispozitiv electronic. Totodată contractul &icirc;ncheiat &icirc;ntre Companie și acest client nu mai este valabil.</li>
-</ul>
-</li>
-</ul>
-<p>&nbsp;</p>
-<ul>
-<li>Compania se obligă:
-<ul>
-<li>Să ofere Clientului posibilitatea de a face cunoștință &icirc;nainte de &icirc;ncheierea Contractului cu Condițiile deservirii prin abonament. Acest lucru se realizează prin asigurarea accesului liber la textul prezentului Contract pe site-ul oficial al Companiei.</li>
-<li>Să asigure furnizarea către Client a serviciilor &icirc;n privința Dispozitivului electronic &icirc;n volumul, ordinea și calitatea, care să corespundă cerințelor prezentului Regulament, legislației &icirc;n vigoare și cerințelor &icirc;naintate pentru acest tip de servicii &icirc;n condițiile unui circuit de afaceri normal.</li>
-<li>Să explice Clientului clauzele Contractului, &icirc;n caz de parvenire a unei asemenea cereri din partea Clientului, &icirc;n formă verbală sau scrisă. Totodată explicarea se va face prin metoda analogică cererii.</li>
-<li>Să nu divulge informații despre Client, cu excepția cazurilor prevăzute expres de legislație și prezentul Contract.</li>
-<li>Să furnizeze la solicitarea Clientului informații complete și veridice despre executarea serviciilor și termenii acestei executări de către Companie &icirc;n privința Dispozitivului electronic cu care Clientul s-a adresat către Companie pentru deservire pe durata Contractului .</li>
-<li>Să restituie Clientului mijloacele achitate &icirc;n caz de reziliere &icirc;nainte de termen a Contractului , &icirc;n mărimea și ordinea prevăzute la punctele 8.4. și 2.8.5.</li>
-<li>De asemenea Compania are și alte obligații prevăzute de Contract și legislația &icirc;n vigoare.</li>
-</ul>
-</li>
-</ul>
+
+<p>3.4 Compania se obligă:</p>
+
+<p>3.4.1 Să ofere Clientului posibilitatea de a face cunoștință &icirc;nainte de &icirc;ncheierea Contractului cu Condițiile deservirii prin abonament. Acest lucru se realizează prin asigurarea accesului liber la textul prezentului Contract pe site-ul oficial al Companiei.</p>
+<p>3.4.2 Să asigure furnizarea către Client a serviciilor &icirc;n privința Dispozitivului electronic &icirc;n volumul, ordinea și calitatea, care să corespundă cerințelor prezentului Regulament, legislației &icirc;n vigoare și cerințelor &icirc;naintate pentru acest tip de servicii &icirc;n condițiile unui circuit de afaceri normal.</p>
+<p>3.4.3 Să explice Clientului clauzele Contractului, &icirc;n caz de parvenire a unei asemenea cereri din partea Clientului, &icirc;n formă verbală sau scrisă. Totodată explicarea se va face prin metoda analogică cererii.</p>
+<p>3.4.4 Să nu divulge informații despre Client, cu excepția cazurilor prevăzute expres de legislație și prezentul Contract.</p>
+<p>3.4.5 Să furnizeze la solicitarea Clientului informații complete și veridice despre executarea serviciilor și termenii acestei executări de către Companie &icirc;n privința Dispozitivului electronic cu care Clientul s-a adresat către Companie pentru deservire pe durata Contractului .</p>
+<p>3.4.6 Să restituie Clientului mijloacele achitate &icirc;n caz de reziliere &icirc;nainte de termen a Contractului , &icirc;n mărimea și ordinea prevăzute la punctele 8.4. și 2.8.5.</p>
+<p>3.4.7 De asemenea Compania are și alte obligații prevăzute de Contract și legislația &icirc;n vigoare.</p>
+
 <p><strong>&nbsp;</strong></p>
-<ol start="4">
-<li><strong>ORDINEA ACȚIUNILOR LA ADRESAREA CLIENTULUI </strong></li>
-</ol>
+
+<p><strong>4. ORDINEA ACȚIUNILOR LA ADRESAREA CLIENTULUI </strong></p>
+
 <p>&nbsp;</p>
-<ul>
-<li>&Icirc;n caz de apariție la Client a temeiurilor pentru adresare către Companie pentru prestarea serviciilor &icirc;n volumul și &icirc;n ordinea prevăzute de prezentul Contract, Clientul și Compania acționează &icirc;n conformitate cu următoarea ordine:
-<ul>
-<li>Clientul se adreseacă către Companie pentru prestarea serviciilor prin intermediul uneia din metodele enumerate mai jos:</li>
-</ul>
-</li>
-</ul>
-<p><strong>---</strong>&nbsp; adresarea către Centrul de contact al Companiei la numărul <strong>+37322874114</strong></p>
+
+<p>4.1 &Icirc;n caz de apariție la Client a temeiurilor pentru adresare către Companie pentru prestarea serviciilor &icirc;n volumul și &icirc;n ordinea prevăzute de prezentul Contract, Clientul și Compania acționează &icirc;n conformitate cu următoarea ordine:</p>
+
+<p>4.1.1 Clientul se adreseacă către Companie pentru prestarea serviciilor prin intermediul uneia din metodele enumerate mai jos:</p>
+
+<p>-&nbsp;- adresarea către Centrul de contact al Companiei la numărul <strong>+37322874114</strong></p>
 <p>-&shy;‐ &icirc;nregistrarea adresării la capitolul specializat pe site-ul oficial al Companiei, cu comunicarea informațiilor și a copiilor electronice ale documentelor necesare, cum este stabilit de către Companie;</p>
 <p>-&shy;‐ expedierea copiilor documentelor necesare pin poștă &icirc;n adresa Companiei, totodată expedierea trebuie realizată cu confirmare de primire;</p>
 <p>-&shy;‐ prezentarea originalelor/copiilor documentelor printr-o altă metodă, care permite de a stabili cu certitudine și de a fixa data și ora acestei prezentări.</p>
-<ul>
-<li>&Icirc;n caz de adresare a Clientului către Companie pentru deservire &icirc;n limitele Contractului, Clientul se obligă să furnizeze Companiei informațiile și documentele necesare (originale sau copii, copii scanate, pe suport de h&icirc;rtie sau &icirc;n format electronic), prevăzute de prezentul Contract, de calitate corespunzătoare. Totodată părțile au convenit că, corespunzătoare este calitatea care permite de a citi &icirc;n mod clar (sau de a identifica &icirc;n alt mod) informația conținută &icirc;n aceste documente. &Icirc;n cazul &icirc;n care documentele originale, care urmează a fi prezentate &icirc;n cadrul Contractului, sunt &icirc;ntocmite &icirc;ntr-o altă limbă dec&icirc;t limba rusă, documentele se prezintă cu traducere și legalizare (apostilare). Dacă la adresarea pentru deservire Clientul prezintă documente de calitate necorespunzătoare, sau nu prezintă toate documentele sau informațiile necesare, Compania va notifica Clientul despre această lipsă (calitate necorespunzătoare) a documentelor prezentate. &Icirc;n acest caz, termenul pentru &icirc;ndeplinirea de către Companie a obligațiilor sale de deservire pe marginea acestei adresări &icirc;ncepe să curgă doar din momentul prezentării de către Client a setului complet de documente și informații de calitate corespunzătoare.</li>
-</ul>
+
+<p>4.1.1.1 &Icirc;n caz de adresare a Clientului către Companie pentru deservire &icirc;n limitele Contractului, Clientul se obligă să furnizeze Companiei informațiile și documentele necesare (originale sau copii, copii scanate, pe suport de h&icirc;rtie sau &icirc;n format electronic), prevăzute de prezentul Contract, de calitate corespunzătoare. Totodată părțile au convenit că, corespunzătoare este calitatea care permite de a citi &icirc;n mod clar (sau de a identifica &icirc;n alt mod) informația conținută &icirc;n aceste documente. &Icirc;n cazul &icirc;n care documentele originale, care urmează a fi prezentate &icirc;n cadrul Contractului, sunt &icirc;ntocmite &icirc;ntr-o altă limbă dec&icirc;t limba rusă, documentele se prezintă cu traducere și legalizare (apostilare). Dacă la adresarea pentru deservire Clientul prezintă documente de calitate necorespunzătoare, sau nu prezintă toate documentele sau informațiile necesare, Compania va notifica Clientul despre această lipsă (calitate necorespunzătoare) a documentelor prezentate. &Icirc;n acest caz, termenul pentru &icirc;ndeplinirea de către Companie a obligațiilor sale de deservire pe marginea acestei adresări &icirc;ncepe să curgă doar din momentul prezentării de către Client a setului complet de documente și informații de calitate corespunzătoare.</p>
+
 <p>&nbsp;</p>
-<ul>
-<li>Clientul transmite Companiei sau reprezentantului Companiei (&icirc;n conformitate cu instrucțiunile primite de la Companie) dispozitivul defectat și setul de documente &icirc;n original (copii, dacă se admite) și informațiile necesare, și anume:</li>
-</ul>
+
+<p>4.1.2 Clientul transmite Companiei sau reprezentantului Companiei (&icirc;n conformitate cu instrucțiunile primite de la Companie) dispozitivul defectat și setul de documente &icirc;n original (copii, dacă se admite) și informațiile necesare, și anume:</p>
+
 <p>-&shy;‐ cererea de forma stabilită de Companie, completată și semnată personal;</p>
 <p>-&shy;‐&nbsp; acordul pentru prelucrarea datelor cu caracter personal;</p>
 <p>-&shy;‐ copia buletinului de identitate al Clientului (&icirc;n calitate de anexă la cerere, cu descrierea și autentificarea cu propria semnătură);</p>
@@ -172,44 +160,44 @@
 <p>&nbsp;</p>
 <p>4.2. Compania verifică documentele și informațiile primite de la Client prin orice mijloace legale, la necesitate efectuează acțiuni de diagnosticare a Dispozitivului electronic deteriorat, și &icirc;n termen de 10 (zece) zile calendaristice ia decizia cu privire la corespunderea sau necorespunderea adresării parvenite din partea Clientului condițiilor Contractului &icirc;ncheiat &icirc;n temeiul prezentului Regulament, și respectiv cu privire la apariția sau lipsa obligațiilor Companiei privind prestarea serviciilor de deservire către Client &icirc;n temeiul Contractului la o asemenea adresare a Clientului.</p>
 <p>&nbsp;</p>
-<ul>
-<li>&Icirc;n caz de recunoaștere de către Companie a adresării parvenite din partea Clientului drept necorespunzătoare condițiilor Contractului, și respectiv despre lipsa obligațiilor Companiei privind prestarea serviciilor de deservire către Client &icirc;n temeiul Contractului la o asemenea adresare a Clientului, Compania va informa Clientul despre decizia luată prin expedierea la adresa poștală a acestuia a unei notificării scrise cu indicarea temeiurilor refuzului, sau prin expedierea unei notificări electronice cu privire la refuz la adresa electronică a Clientului, sau la numărul de telefon mobil al Clientului, indicat de către Client &icirc;n timpul adresării pentru deservire.</li>
-</ul>
+
+<p>4.3 &Icirc;n caz de recunoaștere de către Companie a adresării parvenite din partea Clientului drept necorespunzătoare condițiilor Contractului, și respectiv despre lipsa obligațiilor Companiei privind prestarea serviciilor de deservire către Client &icirc;n temeiul Contractului la o asemenea adresare a Clientului, Compania va informa Clientul despre decizia luată prin expedierea la adresa poștală a acestuia a unei notificării scrise cu indicarea temeiurilor refuzului, sau prin expedierea unei notificări electronice cu privire la refuz la adresa electronică a Clientului, sau la numărul de telefon mobil al Clientului, indicat de către Client &icirc;n timpul adresării pentru deservire.</p>
+
 <p>&nbsp;</p>
-<ul>
-<li>Serviciile de deservire a Dispozitivului electronic &icirc;n baza Contractului pot fi prestate de către Companie la sediul (localitatea, regiunea, raionul) Clientului și locul aflării Dispozitivului electronic primit pentru deservirea prin abonament, sau acest Dispozitiv electronic poate fi transportat &icirc;n cazurile &icirc;n care deservirea nu poate fi efectuată la sediul Clientului și locul aflării Dispozitivului electronic primit pentru deservirea prin abonament din cauza absenței reprezentanților Companiei &icirc;n această localitate sau &icirc;n caz de lipsă la reprezentanții Companiei a bazei tehnice necesare pentru realizarea acțiunilor de diagnosticare și/sau a deservirii de calitate corespunzătoare. Totodată transportarea Dispozitivului electronic se efectuează cu forțele (din contul) Companiei.&nbsp;</li>
-</ul>
+
+<p>4.4 Serviciile de deservire a Dispozitivului electronic &icirc;n baza Contractului pot fi prestate de către Companie la sediul (localitatea, regiunea, raionul) Clientului și locul aflării Dispozitivului electronic primit pentru deservirea prin abonament, sau acest Dispozitiv electronic poate fi transportat &icirc;n cazurile &icirc;n care deservirea nu poate fi efectuată la sediul Clientului și locul aflării Dispozitivului electronic primit pentru deservirea prin abonament din cauza absenței reprezentanților Companiei &icirc;n această localitate sau &icirc;n caz de lipsă la reprezentanții Companiei a bazei tehnice necesare pentru realizarea acțiunilor de diagnosticare și/sau a deservirii de calitate corespunzătoare. Totodată transportarea Dispozitivului electronic se efectuează cu forțele (din contul) Companiei.&nbsp;</p>
+
+
 <p>&nbsp;</p>
-<p>&nbsp;</p>
-<ol start="5">
-<li><strong>PROCEDURA DE SOLUȚIONARE A LITIGIILOR, RĂSPUNDERERA PĂRȚILOR </strong></li>
-</ol>
+
+<p><strong>5. PROCEDURA DE SOLUȚIONARE A LITIGIILOR, RĂSPUNDERERA PĂRȚILOR </strong></p>
+
 <p>&nbsp;</p>
 <p>5.1. Toate litigiile și divergențele apărute &icirc;ntre Companie și Client se soluționează prin negocieri. Totodată Părțile au convenit că, &icirc;n caz de apariție a litigiului (situației conflictuale), partea, drepturile căreia &icirc;n limitele contractului &nbsp;&icirc;n opinia ei au fost &icirc;ncălcate, va expedia &icirc;n mod obligatoriu &icirc;n adresa celeilalte părți o pretenție scrisă cu &icirc;ntemeierea poziției sale. O astfel de pretenție se va expedia prin orice metodă, care permite de a fixa &icirc;n mod veridic faptul și data primirii pretenției de către cealaltă parte. Partea care a primit pretenția va expedia celeilalte părți răspunsul la pretenție &icirc;n limitele termenului stabilit de legislația &icirc;n vigoare. &Icirc;n cazul &icirc;n care nu se ajunge la un acord, litigiul dintre Părți se soluționează &icirc;n conformitate cu legislația &icirc;n vigoare.</p>
 <p>&nbsp;</p>
-<ul>
-<li>Părțile se exonerează de răspundere pentru neexecutarea sau executarea necorespunzătoare a obligațiilor sale prevăzute &icirc;n Contract, dacă o asemenea neexecutare a avut loc ca urmare a survenirii forței majore, inclusiv a circumstanțelor excepționale și inevitabile, &icirc;n condițiile specifice ale unei anumite perioade de timp. La circumstanțe de forță majoră se referă, inclusiv, dar fără a se limita doar la acestea, următoarele dezastre cum ar fi: cutremure, inundații, trăsnete, alunecări de teren, temperatura, forța v&icirc;ntului și nivelul de precipitații care &icirc;mpiedică activitatea vitală normală, moratoriul autorităților de conducere; greve și alte circumstanțe similare, falimentul Companiei (inițierea procedurii de recunoaștere a Companiei &icirc;n stare de faliment). &nbsp;&nbsp;</li>
-</ul>
+
+<p>5.2 Părțile se exonerează de răspundere pentru neexecutarea sau executarea necorespunzătoare a obligațiilor sale prevăzute &icirc;n Contract, dacă o asemenea neexecutare a avut loc ca urmare a survenirii forței majore, inclusiv a circumstanțelor excepționale și inevitabile, &icirc;n condițiile specifice ale unei anumite perioade de timp. La circumstanțe de forță majoră se referă, inclusiv, dar fără a se limita doar la acestea, următoarele dezastre cum ar fi: cutremure, inundații, trăsnete, alunecări de teren, temperatura, forța v&icirc;ntului și nivelul de precipitații care &icirc;mpiedică activitatea vitală normală, moratoriul autorităților de conducere; greve și alte circumstanțe similare, falimentul Companiei (inițierea procedurii de recunoaștere a Companiei &icirc;n stare de faliment). &nbsp;&nbsp;</p>
+
 <p>&nbsp;</p>
-<ul>
-<li>Partea care se află sub influența forței majore se obligă să notifice despre acest fapt cealaltă Parte &icirc;ntr-un termen rezonabil din momentul, &icirc;n care i-a devenit cunoscut despre survenirea acestor circumstanțe.</li>
-</ul>
+
+<p>5.3 Partea care se află sub influența forței majore se obligă să notifice despre acest fapt cealaltă Parte &icirc;ntr-un termen rezonabil din momentul, &icirc;n care i-a devenit cunoscut despre survenirea acestor circumstanțe.</p>
+
 <p>&nbsp;</p>
-<ol start="6">
-<li><strong>CLAUZE FINALE ȘI SPECIALE </strong></li>
-</ol>
+
+<p><strong>6. CLAUZE FINALE ȘI SPECIALE </strong></p>
+
 <p>&nbsp;</p>
-<ul>
-<li>Toate modificările și completările la clauzele Contractului , &icirc;ncheiat și &icirc;n vigoare &icirc;ntre Părți, se vor perfecta &icirc;n formă scrisă &icirc;n limba de stat sau rusă, se vor sermna de către ambele Părți și/sau de către reprezentanții &icirc;nputerniciți ai acestora.</li>
-</ul>
+
+<p>6.1 Toate modificările și completările la clauzele Contractului , &icirc;ncheiat și &icirc;n vigoare &icirc;ntre Părți, se vor perfecta &icirc;n formă scrisă &icirc;n limba de stat sau rusă, se vor sermna de către ambele Părți și/sau de către reprezentanții &icirc;nputerniciți ai acestora.</p>
+
 <p>&nbsp;</p>
-<ul>
-<li>Părțile sunt de acord cu reproducerea facsimilă a ștampilelor și semnăturilor Companiei &icirc;n scopul executării prezentului Contract.</li>
-</ul>
+
+<p>6.2 Părțile sunt de acord cu reproducerea facsimilă a ștampilelor și semnăturilor Companiei &icirc;n scopul executării prezentului Contract.</p>
+
 <p>&nbsp;</p>
-<ol start="7">
-<li><strong>RECHIZITELE PĂRȚILOR </strong></li>
-</ol>
+
+<p><strong>7. RECHIZITELE PĂRȚILOR </strong></p>
+
 <table>
 <tbody>
 <tr>
@@ -228,15 +216,20 @@
 <p>&nbsp;</p>
 </td>
 <td width="347">
+<p >&nbsp;<?=$model->name?></p>
+<p>&nbsp;</p>
 <p>&nbsp;</p>
 </td>
 </tr>
 <tr>
-<td width="347">
-<p>______________________/ Orlov Ivan</p>
+<td width="347" >
+<img width="120" src="/assets/img/signature.png" style="margin-top: 10px;">
+<p style="margin-top: -10px;">______________________/ Orlov Ivan</p>
+<img width="300" src="/assets/img/stamp.png" style="margin-top: -170px;">
 </td>
 <td width="347">
-<p>&nbsp;</p>
+
+<p >&nbsp;</p>
 </td>
 </tr>
 </tbody>
