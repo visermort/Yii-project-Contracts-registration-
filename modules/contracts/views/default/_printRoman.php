@@ -8,9 +8,9 @@
 <p>&nbsp;</p>
 <p>SRL &bdquo;MOBILE-GUARD&rdquo;, denumită &icirc;n continuare <strong>&bdquo;Companie&rdquo;</strong>, care acționează &icirc;n baza Statutului, pe de o parte, și &nbsp;<strong><u>N.P.<?=$model->name?></u></strong>, denumit/ă &icirc;n continuare <strong>&bdquo;Client&rdquo;</strong>, IDNP <?=$model->passport?>, telefon mobil <?=$model->phone?>, pe de altă parte, denumite &icirc;n continuare &bdquo;Părți&rdquo;, au &icirc;ncheiat prezentul Contract după cum urmează: &nbsp;</p>
 <p>&nbsp;</p>
-<ol>
-<li><strong> OBIECTUL CONTRACTULUI </strong></li>
-</ol>
+
+<p><strong>1. OBIECTUL CONTRACTULUI </strong></p>
+
 <p>&nbsp;</p>
 <p>1.1. Obiectul Contractului &nbsp;&icirc;l constituie atribuirea prin abonament de către Companie a Dispozitivului electronic al Clientului pentru deservire prin abonament contra plății stabilite de prezentul Contract, pentru termenul stabilit de prezentul Contract, și prestarea Clientului serviciilor de deservire a Dispozitivului electronic &icirc;n limitele Volumului de servicii stabilit de prezentul Contract, pe durata termenului de deservire prin abonament.</p>
 <p>&nbsp;</p>
@@ -223,9 +223,9 @@
 </tr>
 <tr>
 <td width="347" >
-<img width="120" src="/assets/img/signature.png" style="margin-top: 10px;">
-<p style="margin-top: -10px;">______________________/ Orlov Ivan</p>
-<img width="300" src="/assets/img/stamp.png" style="margin-top: -170px;">
+<img width="50" src="/assets/img/signature.jpg" style="margin-top: -10px; margin-left:50px">
+<p style="margin-top: 30px;">______________________/ Orlov Ivan</p>
+<img  src="/assets/img/stamp.jpg" style="margin-top: -110px; margin-left:160px; max-width: 120px;">
 </td>
 <td width="347">
 
