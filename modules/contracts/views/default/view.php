@@ -13,7 +13,7 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="contracts-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
-
+<? /*?>
     <p>
         <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
         <?= Html::a('Delete', ['delete', 'id' => $model->id], [
@@ -23,11 +23,11 @@ $this->params['breadcrumbs'][] = $this->title;
                 'method' => 'post',
             ],
         ]) ?>
-
+            
         <?= Html::a('Print', ['print', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
 
     </p>
-
+<?*/?>
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
@@ -45,5 +45,10 @@ $this->params['breadcrumbs'][] = $this->title;
            // 'sale_point',
         ],
     ]) ?>
+    <p>
+        <?= Html::a('Print contract', ['print', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
+
+    </p>
+
 
 </div>

@@ -28,7 +28,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
         <?= $form->field($model, 'password')->passwordInput() ?>
   
-        <?= $form->field($model, 'salePoint')->dropDownList(['',
+        <?= $form->field($model, 'salePoint')->dropDownList([''=>'',
             '01 Dep Chisinau Bd. Ștefan cel Mare 71' => '01 Dep Chisinau Bd. Ștefan cel Mare 71'  ,
             '02 Dep Chisinau Str. Independentei 13' => '02 Dep Chisinau Str. Independentei 13',
             '04 Dep Chisinau Str. Arborilor 21' => '04 Dep Chisinau Str. Arborilor 21',

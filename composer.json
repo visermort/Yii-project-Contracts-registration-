@@ -21,7 +21,8 @@
         "kartik-v/yii2-export": "@dev",
         "kartik-v/yii2-mpdf": "*",
         "codemix/yii2-excelexport": "*",
-        "google/apiclient": "2.0"
+        "google/apiclient": "2.0",
+        "yiisoft/yii2-authclient": "^2.1"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",

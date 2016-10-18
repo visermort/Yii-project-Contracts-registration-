@@ -80,7 +80,8 @@ class Contracts extends \yii\db\ActiveRecord
     {
        if(parent::beforeSave($insert)) {
            if ($insert) {
-                $this->sale_point = $_SESSION['contracts_sailes_point']; 
+                $this->sale_point = Yii::$app->session->get('contracts_sailes_point');
+                //$_SESSION['contracts_sailes_point']; 
            }
            return true;
        }

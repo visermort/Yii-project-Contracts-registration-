@@ -2,6 +2,8 @@
 
 namespace app\models;
 
+use Yii;
+
 class User extends \yii\base\Object implements \yii\web\IdentityInterface
 {
     public $id;
@@ -61,7 +63,8 @@ class User extends \yii\base\Object implements \yii\web\IdentityInterface
     {
         foreach (self::$users as $user) {
             if (strcasecmp($user['username'], $username) === 0) {
-                $_SESSION['contracts_sailes_point'] = $salesPoint;
+                Yii::$app->session->set('contracts_sailes_point', $salesPoint);
+                //$_SESSION['contracts_sailes_point'] = $salesPoint;
                 return new static($user);
             }
         }

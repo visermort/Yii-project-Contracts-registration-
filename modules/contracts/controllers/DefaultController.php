@@ -12,13 +12,15 @@ use yii\filters\AccessControl;
 use kartik\mpdf\Pdf;
 use codemix\yii2Excelexport;
 use mikehaertl\phpTmpfile;
+use app\models\GoogleDrive;
 
 /**
  * DefaultController implements the CRUD actions for Contracts model.
  */
 class DefaultController extends Controller
 {
-    /**
+   //private $uploadFile = 'upload/contracts.xlsx';
+   /**
      * @inheritdoc
      */
     public function behaviors()
@@ -140,7 +142,7 @@ class DefaultController extends Controller
 
     public function actionPrint($id)
     {
-         
+
         $content = $this->renderPartial('_printRoman', [
             'model' => $this->findModel($id),
         ]);
@@ -235,6 +237,52 @@ class DefaultController extends Controller
         return $this->renderPartial('_printRoman', [
             'model' => $this->findModel($id),
         ]);
+
+    }
+
+
+
+    public function actionExport()
+    {
+        $file = \Yii::createObject([
+            'class' => 'codemix\excelexport\ExcelFile',
+
+            'writer' => '\PHPExcel_Writer_Excel2007', // Override default of `\PHPExcel_Writer_Excel2007`
+            'sheets' => [
+                'Contracts' => [
+                    'class' => 'codemix\excelexport\ActiveExcelSheet',
+                    'query' => Contracts::find(),
+                    'attributes' => [
+                        'id',
+                        'date',
+                        'name',
+                        'passport',
+                        'phone',    
+                        'manufacturer',
+                        'model',
+                        'imei',
+                        'price',
+                        'sum',
+                        'percent',
+                        'sale_point',
+
+                    ],
+                    'batchSize' => 100000, 
+                ],
+            ],
+        ]);
+        $phpExcell = $file->getWorkbook();
+        foreach (range(0, 11) as $col) {
+            $phpExcell
+                    ->getSheet(0)
+                    ->getColumnDimensionByColumn($col)
+                    ->setAutoSize(true);
+        }
+        
+        $file->saveAs('upload/contracts.xlsx');
+        GoogleDrive::saveFile('upload/contracts.xlsx');
+
+        return $this->render('export');
 
     }
 

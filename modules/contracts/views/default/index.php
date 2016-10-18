@@ -36,8 +36,12 @@ $this->params['breadcrumbs'][] = $this->title;
             'percent',
             'sum',
            // 'sale_point',
+            [
+                'class' => 'yii\grid\ActionColumn',
+                'template' => '{view} ',
+            ],
+          //  ['class' => 'yii\grid\ActionColumn'],
 
-            ['class' => 'yii\grid\ActionColumn'],
-        ],
+            ],
     ]); ?>
 <?php Pjax::end(); ?></div>

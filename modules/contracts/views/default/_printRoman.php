@@ -217,7 +217,7 @@
 </td>
 <td width="347">
 <p >&nbsp;<?=$model->name?></p>
-<p>&nbsp;</p>
+<p>&nbsp;<?=$model->passport?></p>
 <p>&nbsp;</p>
 </td>
 </tr>
@@ -228,8 +228,8 @@
 <img  src="/assets/img/stamp.jpg" style="margin-top: -110px; margin-left:160px; max-width: 120px;">
 </td>
 <td width="347">
-
-<p >&nbsp;</p>
+<p>&nbsp;</p>
+<p>______________________/ <?=$model->name?></p>
 </td>
 </tr>
 </tbody>

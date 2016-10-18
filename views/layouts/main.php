@@ -31,7 +31,7 @@ AppAsset::register($this);
 
         <?php
         NavBar::begin([
-             'brandLabel' => Html::img('@web/assets/img/smart_guard_logo.png', ['alt'=>'SmartGuard', 'style' => 'max-height: 45px; margin-top: -12px;']),
+             'brandLabel' => Html::img('@web/assets/img/smart_guard_logo2.png', ['alt'=>'SmartGuard', 'style' => 'max-height: 45px; margin-top: -12px;']),
             //'brandLabel' => 'SmartGuard',
             'brandUrl' => Yii::$app->homeUrl,
             'options' => [
@@ -41,7 +41,7 @@ AppAsset::register($this);
         echo Nav::widget([
                 'options' => ['class' => 'navbar-nav navbar-left'],
                 'items' => [
-                    ['label' => 'SmartGuard', 'url' => ['/']],
+                    ['label' => 'SmartGuard'],
                 ],
 
             ]);
@@ -50,7 +50,8 @@ AppAsset::register($this);
             'items' => [
                 
                 ['label' => 'Contracts', 'url' => ['/contracts']],
-                ['label' => 'Export', 'url' => ['/contracts/excell']],
+                ['label' => 'Export', 'url' => ['/contracts/export']],
+                //['label' => 'Export', 'url' => ['/contracts/excell']],
                //['label' => 'About', 'url' => ['/site/about']],
                // ['label' => 'Contact', 'url' => ['/site/contact']],
                 Yii::$app->user->isGuest ? (
