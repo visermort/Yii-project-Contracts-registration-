@@ -3,6 +3,7 @@
 namespace app\modules\contracts\models;
 
 use Yii;
+use app\models\User;
 
 /**
  * This is the model class for table "{{%contracts}}".
@@ -63,7 +64,8 @@ class Contracts extends \yii\db\ActiveRecord
             'price' => 'Costul aparatului',
             'percent' => 'Percent',
             'sum' => 'Summa',
-            'sale_point' => 'Sale Point',
+            'user.display_name' => 'Sale Point',
+           // 'sale_point' => 'Sale Point',
         ];
     }
 
@@ -80,12 +82,18 @@ class Contracts extends \yii\db\ActiveRecord
     {
        if(parent::beforeSave($insert)) {
            if ($insert) {
-                $this->sale_point = Yii::$app->session->get('contracts_sailes_point');
-                //$_SESSION['contracts_sailes_point']; 
+                $this->id_user = Yii::$app->user->identity->id;
            }
            return true;
        }
        return false;
     }
+
+
+    public function getUser()
+    {
+         return $this->hasOne(User::className(), ['id' => 'id_user']);
+
+    } 
 
 }

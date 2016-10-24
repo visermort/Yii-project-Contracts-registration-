@@ -35,7 +35,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'price',
             'percent',
             'sum',
-           // 'sale_point',
+            'user.display_name',
             [
                 'class' => 'yii\grid\ActionColumn',
                 'template' => '{view} ',

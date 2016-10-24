@@ -12,7 +12,7 @@ class m161007_083641_create_contracts_table extends Migration
      */
     public function up()
     {
-        $this->createTable('mg_contracts', [
+        $this->createTable('{{%contracts}}', [
             'id' => $this->primaryKey(),
             'date' => $this->date()->notNull(),
             'name' => $this->string(100)->notNull(),
@@ -33,6 +33,6 @@ class m161007_083641_create_contracts_table extends Migration
      */
     public function down()
     {
-        $this->dropTable('{{%table_name}}');
+        $this->dropTable('{{%contracts}}');
     }
 }

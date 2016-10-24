@@ -34,10 +34,10 @@ class DefaultController extends Controller
             ],
             'access' => [
                 'class' => AccessControl::className(),
-                'only' => ['index','view','create','update','delete', 'print', 'printPreview', 'excell'],
+                'only' => ['index','view','create','update','delete', 'print', 'printPreview', 'excell', 'export'],
                 'rules' => [
                     [
-                        'actions' => ['index','view','create','update','delete', 'print', 'printPreview', 'excell'],
+                        'actions' => ['index','view','create','update','delete', 'print', 'printPreview', 'excell', 'export'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -200,7 +200,7 @@ class DefaultController extends Controller
                         'price',
                         'sum',
                         'percent',
-                        'sale_point',
+                        'user.display_name',
 
                     ],
 
@@ -264,7 +264,7 @@ class DefaultController extends Controller
                         'price',
                         'sum',
                         'percent',
-                        'sale_point',
+                        'user.display_name',
 
                     ],
                     'batchSize' => 100000, 
