@@ -9,42 +9,33 @@ use yii\web\IdentityInterface;
 //class User extends \yii\base\Object implements \yii\web\IdentityInterface
 class User extends ActiveRecord implements IdentityInterface
 {
-    // public $id;
-    // public $username;
-    // public $password;
-    // public $authKey;
-    // public $accessToken;
+
     const STATUS_DELETED = 0;
     const STATUS_ACTIVE = 10;
 
-    // private static $users = [
-    //     '100' => [
-    //         'id' => '100',
-    //         'username' => 'admin',
-    //         'password' => 'rucnqo',
-    //         'authKey' => 'test100key',
-    //         'accessToken' => '100-token',
-    //     ],
-        // '101' => [
-        //     'id' => '101',
-        //     'username' => 'demo',
-        //     'password' => 'demo',
-        //     'authKey' => 'test101key',
-        //     'accessToken' => '101-token',
-        // ],
-//    ];
+    public $Statusbool;
+    public $newpassword;
+   
+
+    public function attributeLabels()
+    {
+        return [
+            'id' => 'ID',
+            'username' => 'Saile Point',
+            'display_name' => 'Display Name',
+            'status' => 'Status',
+            'StatusText' => 'Active',
+            'Statusbool' => 'Active',
+            'newpassword' => 'New password',
+        ];
+    }
+
+
     public static function tableName()
     {
         return '{{%user}}';
     }
 
-    // /**
-    //  * @inheritdoc
-    //  */
-    // public static function findIdentity($id)
-    // {
-    //     return isset(self::$users[$id]) ? new static(self::$users[$id]) : null;
-    // }
 
     /**
      * @inheritdoc
@@ -54,6 +45,10 @@ class User extends ActiveRecord implements IdentityInterface
         return [
             ['status', 'default', 'value' => self::STATUS_ACTIVE],
             ['status', 'in', 'range' => [self::STATUS_ACTIVE, self::STATUS_DELETED]],
+            [['username', 'display_name'], 'string', 'max' => 255],
+            [['newpassword'], 'string', 'max' => 32],
+            [['Statusbool'], 'boolean'],
+            [['username', 'display_name', ], 'required'],
         ];
     }
 
@@ -87,20 +82,9 @@ class User extends ActiveRecord implements IdentityInterface
      */
     public static function findByUsername($username)
     {
-        // foreach (self::$users as $user) {
-        //     if (strcasecmp($user['username'], $username) === 0) {
-        //         Yii::$app->session->set('contracts_sailes_point', $salesPoint);
-        //         //$_SESSION['contracts_sailes_point'] = $salesPoint;
-        //         return new static($user);
-        //     }
-        // }
 
-        // return null;
        $user = static::findOne(['username' => $username, 'status' => self::STATUS_ACTIVE]);
 
-       if ($user) {
-            Yii::$app->session->set('contracts_sailes_point', $user->username);
-       }
        return $user;
 
     }
@@ -138,8 +122,9 @@ class User extends ActiveRecord implements IdentityInterface
     public function validatePassword($password)
     {
        // return $this->password === $password;
-        return Yii::$app->security->validatePassword($password, $this->password_hash);
-
+       $result =  Yii::$app->security->validatePassword($password, $this->password_hash);
+       //$this->isAdmin = $this->username == 'admin';
+       return $result;
     }
     /**
      * Generates password hash from password and sets it to the model
@@ -159,6 +144,48 @@ class User extends ActiveRecord implements IdentityInterface
     {
         $this->auth_key = Yii::$app->security->generateRandomString();
     }
+
+    public function getStatusText()
+    {
+        if ($this->status == self::STATUS_ACTIVE) {
+            return 'Yes';
+        } else return 'No';
+    }
+    public function getStatusbool()
+    {
+        if ($this->status == self::STATUS_ACTIVE) {
+            return 1;
+        } else return 0;
+    }
+
+
+    public function beforeSave($insert)
+    {
+       if(parent::beforeSave($insert)) {
+           if ($insert) {
+                $this->password_hash = Yii::$app->security->generatePasswordHash('12345');
+                $this->auth_key = Yii::$app->security->generateRandomString();
+           }
+           
+           if ($this->Statusbool == '1') {
+                $this->status = self::STATUS_ACTIVE;
+           } elseif ($this->Statusbool == '0') {
+                $this->status = self::STATUS_DELETED;
+           }
+           
+           if (!$insert && $this->newpassword) {
+                $this->password_hash = Yii::$app->security->generatePasswordHash($this->newpassword);
+                $this->auth_key = Yii::$app->security->generateRandomString();
+           }
+
+           return true;
+       }
+       return false;
+    }
+
+
+
+
 
 
 }

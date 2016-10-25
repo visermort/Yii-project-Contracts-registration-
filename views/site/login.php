@@ -28,7 +28,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
         <?php //$form->field($model, 'username')->textInput(['autofocus' => true]); ?>
 
-        <?= $form->field($model, 'username')->dropDownList(ArrayHelper::map(User::find()->all(), 'username', 'display_name'))?>
+        <?= $form->field($model, 'username')->dropDownList(ArrayHelper::map(User::find()->where(['status'=>User::STATUS_ACTIVE])->all(), 'username', 'display_name'))?>
 
         <?= $form->field($model, 'password')->passwordInput() ?>
 

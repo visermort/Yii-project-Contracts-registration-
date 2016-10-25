@@ -37,12 +37,22 @@ class DefaultController extends Controller
                 'only' => ['index','view','create','update','delete', 'print', 'printPreview', 'excell', 'export'],
                 'rules' => [
                     [
-                        'actions' => ['index','view','create','update','delete', 'print', 'printPreview', 'excell', 'export'],
+                        'actions' => ['index', 'view', 'create', 'print', 'printPreview'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
+                    [
+                        'actions' => ['update', 'delete', 'excell', 'export'],
+                        'allow' => true,
+                        'matchCallback' => function($rule, $action){
+                            return Yii::$app->user->identity->id==1;
+                        },
+                    ],
+
+
                 ],
             ],
+
 
         ];
     }
@@ -53,9 +63,16 @@ class DefaultController extends Controller
      */
     public function actionIndex()
     {
+        Yii::info(print_r($params,true));
         $searchModel = new SearchContracts();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
+        //если юсер не админ, то только свои контракты
+        if (Yii::$app->user->identity->id!=1){
+            $dataProvider->query->andWhere(['id_user'=>Yii::$app->user->identity->id]);
+            $dataProvider->query->andWhere(['date'=> date('Y-m-d', time())]);
+
+        }
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,

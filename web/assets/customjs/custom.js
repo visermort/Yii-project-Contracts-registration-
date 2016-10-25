@@ -23,7 +23,14 @@ jQuery(document).ready(function(){
 
 	});
 
+	$('#devices-search').selectddd(function(){
+		console.log('111', $(this).val());
+		$('#contracts-model').val($(this).val());
+	});
 
+	//$('#devices-search').keydown(function(){
+	//	console.log('111');
+	//})
 
   $('input').on('input keydown paste',function () {
       

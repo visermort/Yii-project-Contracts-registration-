@@ -18,6 +18,13 @@ $this->params['breadcrumbs'][] = $this->title;
     <p>
         <?= Html::a('Create Contract', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
+
+    <?php if (Yii::$app->user->identity->id==1)
+        {
+            $views = '{view}{update}{delete}';
+        } else {
+            $views = '{view}';
+        }?>
 <?php Pjax::begin(); ?>    <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
@@ -35,10 +42,11 @@ $this->params['breadcrumbs'][] = $this->title;
             'price',
             'percent',
             'sum',
-            'user.display_name',
+            'salePoint',
+            //'fullName',
             [
                 'class' => 'yii\grid\ActionColumn',
-                'template' => '{view} ',
+                'template' => $views,//'{view} ',
             ],
           //  ['class' => 'yii\grid\ActionColumn'],
 

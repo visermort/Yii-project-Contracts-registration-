@@ -12,6 +12,7 @@ use app\modules\contracts\models\Contracts;
  */
 class SearchContracts extends Contracts
 {
+    public $salePoint;
     /**
      * @inheritdoc
      */
@@ -19,8 +20,9 @@ class SearchContracts extends Contracts
     {
         return [
             [['id', 'sum'], 'integer'],
-            [['date', 'name', 'passport', 'phone', 'manufacturer', 'model', 'imei', 'percent', 'sale_point'], 'safe'],
+            [['date', 'name', 'passport', 'phone', 'manufacturer', 'model', 'imei', 'percent', 'user'], 'safe'],
             [['price'], 'number'],
+            [['salePoint'], 'safe'],
         ];
     }
 
@@ -42,19 +44,32 @@ class SearchContracts extends Contracts
      */
     public function search($params)
     {
+        //$query = Contracts::find()->with('user');
         $query = Contracts::find();
 
+
         // add conditions that should always apply here
+        //$query->joinWith(['user']);
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
         ]);
 
-        $this->load($params);
 
-        if (!$this->validate()) {
-            // uncomment the following line if you do not want to return any records when validation fails
-            // $query->where('0=1');
+        $dataProvider->sort->attributes['salePoint'] = 
+            [
+            'asc' => ['mg_user.display_name' => SORT_ASC],
+            'desc' => ['mg_user.display_name' => SORT_DESC],
+            'label' => 'Sale point',
+            'default' => SORT_ASC,
+            ];
+
+        if (!($this->load($params) &&  $this->validate())) {
+            /**
+             * Жадная загрузка данных модели User
+             * для работы сортировки.
+             */
+            $query->joinWith(['user']);
             return $dataProvider;
         }
 
@@ -64,6 +79,7 @@ class SearchContracts extends Contracts
             'date' => $this->date,
             'price' => $this->price,
             'sum' => $this->sum,
+           // 'user' => $this->user,
         ]);
 
         $query->andFilterWhere(['like', 'name', $this->name])
@@ -73,8 +89,17 @@ class SearchContracts extends Contracts
             ->andFilterWhere(['like', 'model', $this->model])
             ->andFilterWhere(['like', 'imei', $this->imei])
             ->andFilterWhere(['like', 'percent', $this->percent])
-            ->andFilterWhere(['like', 'sale_point', $this->sale_point]);
+            //->andFilterWhere(['like', 'mb_user.display_name', $this->salePoint])
+            ;
+            // Фильтр по User
+        $query->joinWith(['user' => function ($q) {
+            $q->where('mg_user.display_name LIKE "%' . $this->salePoint . '%"');
+        }]);
 
         return $dataProvider;
     }
+
+    // написано здесь  - пример работает
+    //https://nix-tips.ru/yii2-sortirovka-i-filtr-gridview-po-svyazannym-i-vychislyaemym-polyam.html
+    //
 }

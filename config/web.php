@@ -44,6 +44,7 @@ $config = [
             'showScriptName' => false,
             'rules' => [
                 '/' => 'site/index',
+                'user' => 'user/default/index',
                 'contracts' => 'contracts/default/index',
                 'contracts/clients' => 'contracts/clients/',
                 'contracts/devices' => 'contracts/devices/',
@@ -58,6 +59,10 @@ $config = [
         'contracts' => [
             'class' => 'app\modules\contracts\Module',
         ],
+        'user' => [
+            'class' => 'app\modules\user\user',
+        ],
+
     ],
 
 
