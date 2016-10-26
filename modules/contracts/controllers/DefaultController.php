@@ -70,7 +70,7 @@ class DefaultController extends Controller
         //если юсер не админ, то только свои контракты
         if (Yii::$app->user->identity->id!=1){
             $dataProvider->query->andWhere(['id_user'=>Yii::$app->user->identity->id]);
-            $dataProvider->query->andWhere(['date'=> date('Y-m-d', time())]);
+            $dataProvider->query->andWhere(['>', 'date_create', time() - 24*60*60]);
 
         }
         return $this->render('index', [

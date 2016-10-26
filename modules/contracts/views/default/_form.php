@@ -92,8 +92,7 @@ $devices = [
 
     <?= $form->field($model, 'sum')->textInput(['readonly' => true]) ?>
 
- <!--    <?= $form->field($model, 'sale_point')->textInput(['maxlength' => true]) ?> -->
-
+ 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>
