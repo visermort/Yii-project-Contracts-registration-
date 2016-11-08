@@ -12,6 +12,8 @@ class User extends ActiveRecord implements IdentityInterface
 
     const STATUS_DELETED = 0;
     const STATUS_ACTIVE = 10;
+    const ROLE_USER = 10;
+    const ROLE_ADMIN = 20;
 
     public $Statusbool;
     public $newpassword;
@@ -21,12 +23,14 @@ class User extends ActiveRecord implements IdentityInterface
     {
         return [
             'id' => 'ID',
+            'name' => 'Login',
             'username' => 'Saile Point',
-            'display_name' => 'Display Name',
             'status' => 'Status',
-            'StatusText' => 'Active',
+            'statusText' => 'Active',
             'Statusbool' => 'Active',
             'newpassword' => 'New password',
+            'role' => 'Role',
+            'roleText' => 'Role',
         ];
     }
 
@@ -45,10 +49,12 @@ class User extends ActiveRecord implements IdentityInterface
         return [
             ['status', 'default', 'value' => self::STATUS_ACTIVE],
             ['status', 'in', 'range' => [self::STATUS_ACTIVE, self::STATUS_DELETED]],
-            [['username', 'display_name'], 'string', 'max' => 255],
+            ['role', 'default', 'value' => self::ROLE_USER],
+            ['role', 'in', 'range' => [self::ROLE_USER, self::ROLE_ADMIN]],
+            [['name', 'username'], 'string', 'max' => 255],
             [['newpassword'], 'string', 'max' => 32],
             [['Statusbool'], 'boolean'],
-            [['username', 'display_name', ], 'required'],
+            [['name', 'username', ], 'required'],
         ];
     }
 
@@ -80,10 +86,10 @@ class User extends ActiveRecord implements IdentityInterface
      * @param string $username
      * @return static|null
      */
-    public static function findByUsername($username)
+    public static function findByUsername($name)
     {
 
-       $user = static::findOne(['username' => $username, 'status' => self::STATUS_ACTIVE]);
+       $user = static::findOne(['name' => $name, 'status' => self::STATUS_ACTIVE]);
 
        return $user;
 
@@ -156,6 +162,14 @@ class User extends ActiveRecord implements IdentityInterface
         if ($this->status == self::STATUS_ACTIVE) {
             return 1;
         } else return 0;
+    }
+
+    public function getRoleText()
+    {
+        if ($this->role == self::ROLE_ADMIN) {
+            return 'Admin';
+        } else return 'User';
+
     }
 
 

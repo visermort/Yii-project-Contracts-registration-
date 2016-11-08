@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use app\models\User;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\User */
@@ -12,9 +13,11 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
+    <?= $form->field($model, 'name')->textInput() ?>
+
     <?= $form->field($model, 'username')->textInput() ?>
 
-    <?= $form->field($model, 'display_name')->textInput() ?>
+    <?= $form->field($model, 'role')->dropDownList([User::ROLE_USER => 'User', User::ROLE_ADMIN => 'Admin',]) ?>
 
    	<?= $form->field($model, 'Statusbool')->checkbox(['checked ' => '']) ?>
 

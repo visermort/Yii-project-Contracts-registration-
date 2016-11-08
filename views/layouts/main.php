@@ -8,6 +8,7 @@ use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
+use app\models\User;
 
 AppAsset::register($this);
 ?>
@@ -46,8 +47,9 @@ AppAsset::register($this);
 
             ]);
 
+        //задаём пунты меню в зависимости от роли пользователя
         $items = [];
-        if (Yii::$app->user->identity->id==1) {
+        if (Yii::$app->user->identity->role == User::ROLE_ADMIN  && Yii::$app->user->identity->status == User::STATUS_ACTIVE) {
 
             $items[] = ['label' => 'Export', 'url' => ['/contracts/export']];
             $items[] = ['label' => 'Users', 'url' => ['/user']];
@@ -59,7 +61,7 @@ AppAsset::register($this);
             $items[] = '<li>'
                     . Html::beginForm(['/site/logout'], 'post', ['class' => 'navbar-form'])
                     . Html::submitButton(
-                        'Logout (' . Yii::$app->user->identity->display_name . ')',
+                        'Logout (' . Yii::$app->user->identity->username . ')',
                         ['class' => 'btn btn-link']
                     )
                     . Html::endForm()
@@ -70,25 +72,6 @@ AppAsset::register($this);
         echo Nav::widget([
             'options' => ['class' => 'navbar-nav navbar-right'],
             'items' => $items,
-          //'items' => [
-                
-               // ['label' => 'Contracts', 'url' => ['/contracts']],
-                
-              //  ['label' => 'Export', 'url' => ['/contracts/export']],
-              //  ['label' => 'Users', 'url' => ['/user']],
-            //     Yii::$app->user->isGuest ? (
-            //         ['label' => 'Login', 'url' => ['/site/login']]
-            //     ) : (
-            //         '<li>'
-            //         . Html::beginForm(['/site/logout'], 'post', ['class' => 'navbar-form'])
-            //         . Html::submitButton(
-            //             'Logout (' . Yii::$app->user->identity->display_name . ')',
-            //             ['class' => 'btn btn-link']
-            //         )
-            //         . Html::endForm()
-            //         . '</li>'
-            //     )
-           //  ],
         ]);
         NavBar::end();
         ?>
@@ -107,7 +90,7 @@ AppAsset::register($this);
         <p class="pull-left">&copy; SmartGuard <?= date('Y') ?></p>
 
         <div id="copyright-pixelplus" style="width: 225px;height:60px;float:right; margin-top: -13px;">
-            <?php if(isset($this->params['homePage']) &&  $this->params['homePage']) {?>
+            <?php if(isset($this->params['homePage']) &&  $this->params['homePage']) : ?>
                 <div id="copyright-img-first" style="float:left;width: 40px; ">
                     <a href="http://www.pixelplus.ru/" target="pixel"><img src="http://vorota-pik.pixelproject.ru/wp-content/uploads/2016/10/pixelplus-red.png" border="0" height="45" alt="Компания «ПиксельПлюс»" title="Компания «ПиксельПлюс»"
                     /></a>
@@ -116,7 +99,7 @@ AppAsset::register($this);
                     <a href="http://www.pixelplus.ru/" target="pixel">Создание сайта</a> &mdash;<br>
                         компания «Пиксель Плюс»
                 </div>
-            <?} else {?>
+            <?php else : ?>
             <div id="copyright-img-second" style="float:left;width: 40px;">
                 <a href="http://www.pixelplus.ru/" target="pixel"><img src="http://vorota-pik.pixelproject.ru/wp-content/uploads/2016/10/pixelplus-red.png" border="0"
                 height="45" alt="Компания «Пиксель Плюс»" title="Компания «Пиксель Плюс»"
@@ -126,7 +109,7 @@ AppAsset::register($this);
                 Создание сайта &mdash;<br/>
                 компания «Пиксель Плюс»
             </div>
-            <? } ?> 
+            <?php endif; ?> 
         <div>
     </div>
 </footer>
@@ -135,3 +118,4 @@ AppAsset::register($this);
 </body>
 </html>
 <?php $this->endPage() ?>
+

@@ -12,6 +12,9 @@ use app\models\User;
  */
 class SearchUser extends User
 {
+    public $statusText;
+    public $roleText;
+
     /**
      * @inheritdoc
      */
@@ -19,7 +22,8 @@ class SearchUser extends User
     {
         return [
             [['id', 'status'], 'integer'],
-            [['username', 'auth_key', 'password_hash', 'display_name'], 'safe'],
+            [['username', 'auth_key', 'password_hash'], 'safe'],
+            [['statusText', 'roleText'], 'safe'],
         ];
     }
 
@@ -49,7 +53,25 @@ class SearchUser extends User
             'query' => $query,
         ]);
 
-        $this->load($params);
+        $dataProvider->sort->attributes['roleText'] = 
+            [
+            'asc' => ['role' => SORT_ASC],
+            'desc' => ['role' => SORT_DESC],
+            'label' => 'Role',
+            'default' => SORT_ASC,
+            ];
+        $dataProvider->sort->attributes['statusText'] = 
+            [
+            'asc' => ['status' => SORT_ASC],
+            'desc' => ['status' => SORT_DESC],
+            'label' => 'Active',
+            'default' => SORT_ASC,
+            ];
+
+        //$this->load($params);
+        if (!($this->load($params) && $this-validate())) {
+            return $dataProvider;
+        }
 
         if (!$this->validate()) {
             // uncomment the following line if you do not want to return any records when validation fails
@@ -65,8 +87,8 @@ class SearchUser extends User
 
         $query->andFilterWhere(['like', 'username', $this->username])
             ->andFilterWhere(['like', 'auth_key', $this->auth_key])
-            ->andFilterWhere(['like', 'password_hash', $this->password_hash])
-            ->andFilterWhere(['like', 'display_name', $this->display_name]);
+            ->andFilterWhere(['like', 'password_hash', $this->password_hash]);
+
 
         return $dataProvider;
     }

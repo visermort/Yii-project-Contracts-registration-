@@ -25,11 +25,10 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
 
             'id',
+            'name',
             'username',
-            'display_name',
-            //'status',
-            'StatusText',
-           // ['class' => 'yii\grid\ActionColumn'],
+            'roleText',
+            'statusText',
             [
                 'class' => 'yii\grid\ActionColumn',
                 'template' => '{view}{update}{updatepassword}{delete} ',

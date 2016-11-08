@@ -44,12 +44,7 @@ class SearchContracts extends Contracts
      */
     public function search($params)
     {
-        //$query = Contracts::find()->with('user');
-        $query = Contracts::find();
-
-
-        // add conditions that should always apply here
-        //$query->joinWith(['user']);
+         $query = Contracts::find();
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
@@ -58,8 +53,8 @@ class SearchContracts extends Contracts
 
         $dataProvider->sort->attributes['salePoint'] = 
             [
-            'asc' => ['mg_user.display_name' => SORT_ASC],
-            'desc' => ['mg_user.display_name' => SORT_DESC],
+            'asc' => ['mg_user.username' => SORT_ASC],
+            'desc' => ['mg_user.username' => SORT_DESC],
             'label' => 'Sale point',
             'default' => SORT_ASC,
             ];
@@ -79,7 +74,6 @@ class SearchContracts extends Contracts
             'date' => $this->date,
             'price' => $this->price,
             'sum' => $this->sum,
-           // 'user' => $this->user,
         ]);
 
         $query->andFilterWhere(['like', 'name', $this->name])
@@ -89,17 +83,13 @@ class SearchContracts extends Contracts
             ->andFilterWhere(['like', 'model', $this->model])
             ->andFilterWhere(['like', 'imei', $this->imei])
             ->andFilterWhere(['like', 'percent', $this->percent])
-            //->andFilterWhere(['like', 'mb_user.display_name', $this->salePoint])
             ;
             // Фильтр по User
         $query->joinWith(['user' => function ($q) {
-            $q->where('mg_user.display_name LIKE "%' . $this->salePoint . '%"');
+            $q->where('mg_user.username LIKE "%' . $this->salePoint . '%"');
         }]);
 
         return $dataProvider;
     }
 
-    // написано здесь  - пример работает
-    //https://nix-tips.ru/yii2-sortirovka-i-filtr-gridview-po-svyazannym-i-vychislyaemym-polyam.html
-    //
 }

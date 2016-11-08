@@ -64,7 +64,7 @@ class Contracts extends \yii\db\ActiveRecord
             'price' => 'Costul aparatului',
             'percent' => 'Percent',
             'sum' => 'Summa',
-            'user.display_name' => 'user',//'Sale Point',
+            'user.username' => 'Sale Point',
             'salePoint' => 'Sale Point',
            
         ];
@@ -98,7 +98,7 @@ class Contracts extends \yii\db\ActiveRecord
     } 
     public function getsalePoint()
     {
-        return $this->user->display_name;
+        return $this->user->username;
     }
 
 

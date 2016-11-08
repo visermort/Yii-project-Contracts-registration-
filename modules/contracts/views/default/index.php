@@ -3,6 +3,7 @@
 use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\widgets\Pjax;
+use app\models\User;
 /* @var $this yii\web\View */
 /* @var $searchModel app\modules\contracts\models\SearchContracts */
 /* @var $dataProvider yii\data\ActiveDataProvider */
@@ -19,7 +20,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= Html::a('Create Contract', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
-    <?php if (Yii::$app->user->identity->id==1)
+    <?php if (Yii::$app->user->identity->role == User::ROLE_ADMIN)
         {
             $views = '{view}{update}{delete}';
         } else {

@@ -6,7 +6,7 @@
 <p>mun. Chișinău</p>
 <p><?=$model->date?></p>
 <p>&nbsp;</p>
-<p>SRL &bdquo;MOBILE-GUARD&rdquo;, denumită &icirc;n continuare <strong>&bdquo;Companie&rdquo;</strong>, care acționează &icirc;n baza Statutului, pe de o parte, și &nbsp;<strong><u>N.P.<?=$model->name?></u></strong>, denumit/ă &icirc;n continuare <strong>&bdquo;Client&rdquo;</strong>, IDNP <?=$model->passport?>, telefon mobil <?=$model->phone?>, pe de altă parte, denumite &icirc;n continuare &bdquo;Părți&rdquo;, au &icirc;ncheiat prezentul Contract după cum urmează: &nbsp;</p>
+<p>SRL &bdquo;MOBILE-GUARD&rdquo;, denumită &icirc;n continuare <strong>&bdquo;Companie&rdquo;</strong>, care acționează &icirc;n baza Statutului, pe de o parte, și &nbsp;<strong><u><?=$model->name?></u></strong>, denumit/ă &icirc;n continuare <strong>&bdquo;Client&rdquo;</strong>, IDNP <?=$model->passport?>, telefon mobil <?=$model->phone?>, pe de altă parte, denumite &icirc;n continuare &bdquo;Părți&rdquo;, au &icirc;ncheiat prezentul Contract după cum urmează: &nbsp;</p>
 <p>&nbsp;</p>
 
 <p><strong>1. OBIECTUL CONTRACTULUI </strong></p>

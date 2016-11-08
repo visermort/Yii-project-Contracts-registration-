@@ -7,10 +7,11 @@ use yii\widgets\ActiveForm;
 /* @var $model app\modules\contracts\models\Contracts */
 /* @var $form yii\widgets\ActiveForm */
 
-$this->registerJsFile('/assets/customjs/custom.js', ['depends' => [\yii\web\JqueryAsset::className()]]);
+$this->registerJsFile('/assets/customjs/custom.0.8.js', ['depends' => [\yii\web\JqueryAsset::className()]]);
 
 
-//тарифы по умолчанию и для определённых моделей
+//тарифы по умолчанию и для определённых моделей 
+// если только default то берутся по умолчанию
 $devices = [
     'default' => [
         'label' => '',
@@ -22,26 +23,26 @@ $devices = [
             ],
 
         ],
-    'samsung_s6' => [
-        'label' => 'Samsung S6',
-        'data' => [
-                '0' => ['val' => '0', 'text' => ''],
-                '2000' => ['val' => '.20', 'text' => '20 (paisprezece)'],
-                '5000' => ['val' => '.18', 'text' => '18 (douăsprezece)'],
-                '15000' => ['val' => '.16', 'text' => '16 (zece)'],
-            ],
+    // 'samsung_s6' => [
+    //     'label' => 'Samsung S6',
+    //     'data' => [
+    //             '0' => ['val' => '0', 'text' => ''],
+    //             '2000' => ['val' => '.20', 'text' => '20 (paisprezece)'],
+    //             '5000' => ['val' => '.18', 'text' => '18 (douăsprezece)'],
+    //             '15000' => ['val' => '.16', 'text' => '16 (zece)'],
+    //         ],
 
-        ],
-    'samsung_s6_edge' => [
-        'label' => 'Samsung S6 Edge',
-        'data' => [
-                '0' => ['val' => '0', 'text' => ''],
-                '2000' => ['val' => '.25', 'text' => '25 (paisprezece)'],
-                '5000' => ['val' => '.22', 'text' => '22 (douăsprezece)'],
-                '15000' => ['val' => '.20', 'text' => '20 (zece)'],
-            ],
+    //     ],
+    // 'samsung_s6_edge' => [
+    //     'label' => 'Samsung S6 Edge',
+    //     'data' => [
+    //             '0' => ['val' => '0', 'text' => ''],
+    //             '2000' => ['val' => '.25', 'text' => '25 (paisprezece)'],
+    //             '5000' => ['val' => '.22', 'text' => '22 (douăsprezece)'],
+    //             '15000' => ['val' => '.20', 'text' => '20 (zece)'],
+    //         ],
 
-        ],
+    //     ],
 
 
     ];
@@ -52,25 +53,25 @@ $devices = [
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <!-- <?= $form->field($model, 'date')->textInput() ?> -->
-    <? if ($model->isNewRecord):?>
+
+    <?php if ($model->isNewRecord):?>
       <?= $form->field($model, 'date')->textInput(['value' => date('Y-m-d'), 'readonly' => true]) ?>
-    <? else :?>
+    <?php else :?>
       <?= $form->field($model, 'date')->textInput(['readonly' => true]) ?>
-    <? endif; ?>
+    <?php endif; ?>
 
     <span
 
-    <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'name')->textInput(['maxlength' => true, 'class' => ' form-control latin']) ?>
 
-    <?= $form->field($model, 'passport')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'passport')->textInput(['maxlength' => true, 'class' => ' form-control digital']) ?>
 
-    <?= $form->field($model, 'phone')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'phone')->textInput(['maxlength' => true, 'class' => ' form-control digital']) ?>
+    
+    <?= $form->field($model, 'manufacturer')->textInput(['maxlength' => true, 'class' => ' form-control latin']) ?>
 
-    <?= $form->field($model, 'manufacturer')->textInput(['maxlength' => true]) ?>
 
-
-    <div class="form-group field-contracts-passport required">
+    <div class="form-group <?php echo (count($devices) < 2) ? "hidden" : "" ; ?>">
         <label class="control-label" for="devisec-search">Model - Select from proposed models</label>
         <select id="devices-search" class="form-control">
             <?php foreach ($devices as $key => $device) : ?>
@@ -82,11 +83,11 @@ $devices = [
     <div class="help-block"></div>
     </div>
 
-    <?= $form->field($model, 'model')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'model')->textInput(['maxlength' => true, 'class' => ' form-control latin']) ?>
 
-    <?= $form->field($model, 'imei')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'imei')->textInput(['maxlength' => true, 'class' => ' form-control digital']) ?>
 
-    <?= $form->field($model, 'price')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'price')->textInput(['maxlength' => true, 'class' => ' form-control digital']) ?>
 
     <?= $form->field($model, 'percent')->textInput(['maxlength' => true, 'readonly' => true]) ?>
 

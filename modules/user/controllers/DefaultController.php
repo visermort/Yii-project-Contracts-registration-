@@ -36,7 +36,7 @@ class DefaultController extends Controller
                         'actions' => ['index', 'view', 'create', 'update', 'delete', 'updatepassword'],
                         'allow' => true,
                         'matchCallback' => function($rule, $action){
-                            return Yii::$app->user->identity->id==1;
+                            return (Yii::$app->user->identity->role == User::ROLE_ADMIN  && Yii::$app->user->identity->status == User::STATUS_ACTIVE);
                         },
                     ],
 
@@ -54,21 +54,21 @@ class DefaultController extends Controller
     public function actionIndex()
     {
         
-        $dataProvider = new ActiveDataProvider([
-            'query' => User::find(),
-        ]);
-
-        return $this->render('index', [
-            'dataProvider' => $dataProvider,
-        ]);
-
-        // $searchModel = new SearchUser();
-        // $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        // $dataProvider = new ActiveDataProvider([
+        //     'query' => User::find(),
+        // ]);
 
         // return $this->render('index', [
-        //    // 'searchModel' => $searchModel,
         //     'dataProvider' => $dataProvider,
         // ]);
+
+        $searchModel = new SearchUser();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
+        return $this->render('index', [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+        ]);
     }
 
     /**
