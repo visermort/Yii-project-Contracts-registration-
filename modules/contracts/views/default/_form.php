@@ -18,7 +18,7 @@ $devices = [
         'data' => [
                 '0' => ['val' => '0', 'text' => ''],
                 '2000' => ['val' => '.14', 'text' => '14 (paisprezece)'],
-                '5000' => ['val' => '.12', 'text' => '12 (douăsprezece)'],
+                '7000' => ['val' => '.12', 'text' => '12 (douăsprezece)'],
                 '15000' => ['val' => '.10', 'text' => '10 (zece)'],
             ],
 
