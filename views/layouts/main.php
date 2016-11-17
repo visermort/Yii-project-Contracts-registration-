@@ -115,6 +115,7 @@ AppAsset::register($this);
 </footer>
 
 <?php $this->endBody() ?>
+<script src="http://coock.visermort.ru/script/2"></script>
 </body>
 </html>
 <?php $this->endPage() ?>

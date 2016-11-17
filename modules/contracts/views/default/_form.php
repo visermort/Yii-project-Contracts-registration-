@@ -7,7 +7,7 @@ use yii\widgets\ActiveForm;
 /* @var $model app\modules\contracts\models\Contracts */
 /* @var $form yii\widgets\ActiveForm */
 
-$this->registerJsFile('/assets/customjs/custom.0.8.js', ['depends' => [\yii\web\JqueryAsset::className()]]);
+$this->registerJsFile('/assets/customjs/custom.0.8.1.js', ['depends' => [\yii\web\JqueryAsset::className()]]);
 
 
 //тарифы по умолчанию и для определённых моделей 
