@@ -13,6 +13,7 @@ use app\modules\contracts\models\Contracts;
 class SearchContracts extends Contracts
 {
     public $salePoint;
+    //public $percent;
     /**
      * @inheritdoc
      */
@@ -20,7 +21,7 @@ class SearchContracts extends Contracts
     {
         return [
             [['id', 'sum'], 'integer'],
-            [['date', 'name', 'passport', 'phone', 'manufacturer', 'model', 'imei', 'percent', 'user'], 'safe'],
+            [['date', 'name', 'passport', 'phone', 'manufacturer', 'model', 'imei', 'tariff', 'user'], 'safe'],
             [['price'], 'number'],
             [['salePoint'], 'safe'],
         ];
@@ -44,7 +45,7 @@ class SearchContracts extends Contracts
      */
     public function search($params)
     {
-         $query = Contracts::find();
+        $query = Contracts::find();
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
@@ -74,6 +75,7 @@ class SearchContracts extends Contracts
             'date' => $this->date,
             'price' => $this->price,
             'sum' => $this->sum,
+            'tariff' => $this->tariff,
         ]);
 
         $query->andFilterWhere(['like', 'name', $this->name])
@@ -82,7 +84,8 @@ class SearchContracts extends Contracts
             ->andFilterWhere(['like', 'manufacturer', $this->manufacturer])
             ->andFilterWhere(['like', 'model', $this->model])
             ->andFilterWhere(['like', 'imei', $this->imei])
-            ->andFilterWhere(['like', 'percent', $this->percent])
+           // ->andFilterWhere(['like', 'percent', $this->percent])
+
             ;
             // Фильтр по User
         $query->joinWith(['user' => function ($q) {

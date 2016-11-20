@@ -7,7 +7,7 @@ use yii\widgets\ActiveForm;
 /* @var $model app\modules\contracts\models\Contracts */
 /* @var $form yii\widgets\ActiveForm */
 
-$this->registerJsFile('/assets/customjs/custom.0.8.1.js', ['depends' => [\yii\web\JqueryAsset::className()]]);
+$this->registerJsFile('/assets/customjs/custom.0.8.2.js', ['depends' => [\yii\web\JqueryAsset::className()]]);
 
 
 //тарифы по умолчанию и для определённых моделей 
@@ -17,9 +17,9 @@ $devices = [
         'label' => '',
         'data' => [
                 '0' => ['val' => '0', 'text' => ''],
-                '2000' => ['val' => '.14', 'text' => '14 (paisprezece)'],
-                '7000' => ['val' => '.12', 'text' => '12 (douăsprezece)'],
-                '15000' => ['val' => '.10', 'text' => '10 (zece)'],
+                '2000' => ['val' => '.14', 'text' => '14'],
+                '7000' => ['val' => '.12', 'text' => '12'],
+                '15000' => ['val' => '.10', 'text' => '10'],
             ],
 
         ],
@@ -89,7 +89,9 @@ $devices = [
 
     <?= $form->field($model, 'price')->textInput(['maxlength' => true, 'class' => ' form-control digital']) ?>
 
-    <?= $form->field($model, 'percent')->textInput(['maxlength' => true, 'readonly' => true]) ?>
+   <!--  <?php // $form->field($model, 'percent')->textInput(['maxlength' => true, 'readonly' => true]) ?> -->
+
+    <?=$form->field($model, 'tariff')->textInput(['maxlength' => true, 'readonly' => true]) ?>
 
     <?= $form->field($model, 'sum')->textInput(['readonly' => true]) ?>
 

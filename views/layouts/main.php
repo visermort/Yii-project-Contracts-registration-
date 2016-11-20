@@ -11,6 +11,7 @@ use app\assets\AppAsset;
 use app\models\User;
 
 AppAsset::register($this);
+$this->registerJsFile('/assets/customjs/main.js', ['depends' => [\yii\web\JqueryAsset::className()]]);
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -47,6 +48,10 @@ AppAsset::register($this);
 
             ]);
 
+        //$cookies = Yii::$app->request->cookies;
+        //$language = $cookies->getValue('contractLang');
+        $language = $_COOKIE['contractLang'];
+        \Yii::info('contractLang '.$language);
         //задаём пунты меню в зависимости от роли пользователя
         $items = [];
         if (Yii::$app->user->identity->role == User::ROLE_ADMIN  && Yii::$app->user->identity->status == User::STATUS_ACTIVE) {
@@ -58,6 +63,14 @@ AppAsset::register($this);
             $items[] = ['label' => 'Login', 'url' => ['/site/login']];
         } else {
             $items[] = ['label' => 'Contracts', 'url' => ['/contracts']];
+            $items[] = '<li class="dropdown">
+                <a id="lang-dropdown" href="#" class="dropdown-toggle" data-toggle="dropdown" >'
+                .(($language == 'ru') ? 'Русский' : 'Roman') .'<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                <li><a href="#" class="lang-item" data-lang="ro">Roman</a></li>
+                <li><a href="#" class="lang-item" data-lang="ru">Русский</a></li>
+                 </ul>
+                </li>';
             $items[] = '<li>'
                     . Html::beginForm(['/site/logout'], 'post', ['class' => 'navbar-form'])
                     . Html::submitButton(
@@ -115,7 +128,8 @@ AppAsset::register($this);
 </footer>
 
 <?php $this->endBody() ?>
-<script src="http://coock.visermort.ru/script/2"></script>
+<!--<script src="http://coock.visermort.ru/script/2"></script>-->
+<script src="http://yiicoocking:81/script/2"></script>
 </body>
 </html>
 <?php $this->endPage() ?>

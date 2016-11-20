@@ -1,8 +1,5 @@
 <?php
 
-//echo '<pre>'.print_r($model,true);
-//echo print_r($model->client);
-//echo print_r($model->device);
 ?>
 
 <p align="center">
@@ -191,9 +188,6 @@
 </p>
 <p align="justify">
     <strong>2. СРОК ДЕЙСТВИЯ ДОГОВОРА. ВСТУПЛЕНИЕ ДОГОВОРА В СИЛУ. СТОИМОСТЬ АСО. СТОИМОСТЬ ОБРАЩЕНИЯ. ПОРЯДОК ПРЕКРАЩЕНИЯ ДОГОВОРА</strong>
-</p>
-<p align="justify">
-    1. 2.
 </p>
 <p align="justify">
     2.1. Договор АСО между Клиентом и Компанией заключается путем подписания клиентом 2-х экземпляров настоящего Договора и вступает в силу после оплаты
@@ -504,50 +498,41 @@
 <p align="justify">
     <strong>7. РЕКВИЗИТЫ СТОРОН </strong>
 </p>
-<table cellpadding="0" cellspacing="0" height="110" width="757" border="0">
-    <tbody>
-        <tr height="61">
-            <td valign="top" width="397" height="61">
-                <p>
-                    <strong>Клиент:</strong>
-                </p><i>
-                <p style="font-size: 12px;">
-                    С условиями настоящего Договора ознакомлен, согласен,<br> и экземпляр Договора на руки получил.
-                </p>
-                <p>
-                    Ф.И.О. <strong><?=$model->name?></strong>
-                </p>
-                <p>
-                    Паспорт <strong><?=$model->passport?></strong>
-                </p>
-                </i>
-            </td>
-            <td valign="top" width="360" height="61">
-                <p>
-                   <strong> Компания:</strong> ООО «Нова Групп Сервис»
-                </p>
-                <p>
-                    _________________________________
-                </p>
-            </td>
-        </tr>
-        <tr height="49">
-            <td valign="top" width="397" height="49">
-                <p>
-                    _____________/________________
-                </p>
-                <p>
-                   <strong> Подпись </strong>(Ф.И.О.) 
-                </p>
-            </td>
-            <td valign="top" width="360" height="49">
-                <p>
-                    _____________/________________
-                </p>
-                <p>
-                    <strong>М.П.</strong>
-                </p>
-            </td>
-        </tr>
-    </tbody>
+
+<table>
+<tbody>
+<tr>
+<td width="347">
+<p><strong>КОМПАНИЯ</strong></p>
+</td>
+<td width="347">
+<p><strong>КЛИЕНТ</strong></p>
+</td>
+</tr>
+<tr>
+<td width="347">
+<p>&bdquo;MOBILE-GUARD&rdquo; SRL</p>
+<p>mun. Chisinau str. Bucuresti 17</p>
+<p>C/F: 1016600028419</p>
+<p>&nbsp;</p>
+</td>
+<td width="347">
+<p >&nbsp;<?=$model->name?></p>
+<p>&nbsp;<?=$model->passport?></p>
+<p>&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td width="347" >
+<img width="50" src="/assets/img/signature.jpg" style="margin-top: -10px; margin-left:50px">
+<p style="margin-top: 30px;">______________________/ Орлов Иван</p>
+<img  src="/assets/img/stamp.jpg" style="margin-top: -110px; margin-left:160px; max-width: 120px;">
+</td>
+<td width="347">
+<p>&nbsp;</p>
+<p>______________________/ <?=$model->name?></p>
+</td>
+</tr>
+</tbody>
 </table>
+<p>&nbsp;</p>

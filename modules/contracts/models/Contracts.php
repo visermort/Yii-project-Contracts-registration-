@@ -37,13 +37,13 @@ class Contracts extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['date', 'name', 'passport', 'manufacturer', 'model', 'imei', 'price', 'percent', 'sum'], 'required'],
+            [['date', 'name', 'passport', 'manufacturer', 'model', 'imei', 'price', 'tariff', 'sum'], 'required'],
             [['date'], 'safe'],
-            [['price'], 'number'],
+            [['price', 'tariff'], 'number'],
             [['sum'], 'integer'],
             [['name', 'passport'], 'string', 'max' => 100],
             [['phone', 'manufacturer', 'model', 'imei'], 'string', 'max' => 50],
-            [['percent'], 'string', 'max' => 20],
+           // [['percent'], 'string', 'max' => 20],
         ];
     }
 
@@ -62,7 +62,10 @@ class Contracts extends \yii\db\ActiveRecord
             'model' => 'Model',
             'imei' => 'IMEI',
             'price' => 'Costul aparatului',
-            'percent' => 'Percent',
+            'percent' => 'Tariff',
+            'tariff' => 'Tariff',
+
+
             'sum' => 'Summa',
             'user.username' => 'Sale Point',
             'salePoint' => 'Sale Point',
@@ -100,6 +103,29 @@ class Contracts extends \yii\db\ActiveRecord
     {
         return $this->user->username;
     }
+
+    public function getpercent()
+    {
+        $language = ($_COOKIE['contractLang'] ? $_COOKIE['contractLang'] : 'ro');
+        return $this->percentDic[$language][(int)$this->tariff];
+
+    }
+
+
+    private $percentDic = [
+        'ro' => [
+            '0' => '',
+            '10' => '10 (zece)',
+            '12' => '12 (douăsprezece)',
+            '14' => '14 (paisprezece)',
+        ],
+        'ru' => [
+            '0' => '',
+            '10' => '10 (десять)',
+            '12' => '12 (двенадцать)',
+            '14' => '14 (четырнадцать)',
+        ],
+    ];
 
 
 

@@ -167,7 +167,7 @@ class DefaultController extends Controller
     public function actionPrint($id)
     {
 
-        $content = $this->renderPartial('_printRoman', [
+        $content = $this->renderPartial($this->printTemplate(), [
             'model' => $this->findModel($id),
         ]);
 
@@ -181,7 +181,7 @@ class DefaultController extends Controller
     */
     public function actionPreview($id) {
 
-        return $this->renderPartial('_printRoman', [
+        return $this->renderPartial($this->printTemplate(), [
             'model' => $this->findModel($id),
         ]);
 
@@ -207,6 +207,14 @@ class DefaultController extends Controller
         return $this->render('export');
 
     }
+
+    private function printTemplate()
+    {
+
+        $language = ($_COOKIE['contractLang'] ? $_COOKIE['contractLang'] : 'ro');
+        return  $language == 'ro' ? '_printRoman' : '_print';
+
+    }   
 
 
 }
