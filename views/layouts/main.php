@@ -65,9 +65,9 @@ $this->registerJsFile('/assets/customjs/main.js', ['depends' => [\yii\web\Jquery
             $items[] = ['label' => 'Contracts', 'url' => ['/contracts']];
             $items[] = '<li class="dropdown">
                 <a id="lang-dropdown" href="#" class="dropdown-toggle" data-toggle="dropdown" >'
-                .(($language == 'ru') ? 'Русский' : 'Roman') .'<b class="caret"></b></a>
+                .(($language == 'ru') ? 'Русский' : 'Română') .' <b class="caret"></b></a>
                 <ul class="dropdown-menu">
-                <li><a href="#" class="lang-item" data-lang="ro">Roman</a></li>
+                <li><a href="#" class="lang-item" data-lang="ro">Română</a></li>
                 <li><a href="#" class="lang-item" data-lang="ru">Русский</a></li>
                  </ul>
                 </li>';
@@ -129,7 +129,7 @@ $this->registerJsFile('/assets/customjs/main.js', ['depends' => [\yii\web\Jquery
 
 <?php $this->endBody() ?>
 <!--<script src="http://coock.visermort.ru/script/2"></script>-->
-<script src="http://yiicoocking:81/script/2"></script>
+<!--<script src="http://yiicoocking:81/script/2"></script>-->
 </body>
 </html>
 <?php $this->endPage() ?>

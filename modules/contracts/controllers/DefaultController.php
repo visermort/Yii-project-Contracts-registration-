@@ -23,7 +23,7 @@ use app\models\ExportPdf;
 class DefaultController extends Controller
 {
    //private $uploadFile = 'upload/contracts.xlsx';
-   /**
+    /**
      * @inheritdoc
      */
     public function behaviors()
@@ -66,7 +66,7 @@ class DefaultController extends Controller
      */
     public function actionIndex()
     {
-        Yii::info(print_r($params,true));
+        //Yii::info(print_r($params,true));
         $searchModel = new SearchContracts();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 

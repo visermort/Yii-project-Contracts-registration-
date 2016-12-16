@@ -12,17 +12,17 @@ $this->registerJsFile('/assets/customjs/custom.0.8.2.js', ['depends' => [\yii\we
 
 //тарифы по умолчанию и для определённых моделей 
 // если только default то берутся по умолчанию
-$devices = [
-    'default' => [
-        'label' => '',
-        'data' => [
-                '0' => ['val' => '0', 'text' => ''],
-                '2000' => ['val' => '.14', 'text' => '14'],
-                '7000' => ['val' => '.12', 'text' => '12'],
-                '15000' => ['val' => '.10', 'text' => '10'],
-            ],
-
-        ],
+//$devices = [
+//    'default' => [
+//            'label' => '',
+//            'data' => [
+//                '0' => ['val' => '0', 'text' => ''],
+//                '1999' => ['val' => '.14', 'text' => '14'],
+//                '7000' => ['val' => '.12', 'text' => '12'],
+//                '15000' => ['val' => '.10', 'text' => '10'],
+//            ],
+//
+//        ],
     // 'samsung_s6' => [
     //     'label' => 'Samsung S6',
     //     'data' => [
@@ -45,7 +45,7 @@ $devices = [
     //     ],
 
 
-    ];
+  //  ];
 
 ?>
 
@@ -74,7 +74,7 @@ $devices = [
     <div class="form-group <?php echo (count($devices) < 2) ? "hidden" : "" ; ?>">
         <label class="control-label" for="devisec-search">Model - Select from proposed models</label>
         <select id="devices-search" class="form-control">
-            <?php foreach ($devices as $key => $device) : ?>
+            <?php foreach (\yii::$app->params['devices'] as $key => $device) : ?>
                 <option value="<?=$device['label']?>" data-tax='<?php echo json_encode($device['data']); ?>'>
                     <?=$device['label']?>
                 </option>
