@@ -19,12 +19,15 @@ use app\models\User;
 
     <?= $form->field($model, 'role')->dropDownList([User::ROLE_USER => 'User', User::ROLE_ADMIN => 'Admin',]) ?>
 
-   	<?= $form->field($model, 'Statusbool')->checkbox(['checked ' => '']) ?>
+    <?= $form->field($model, 'Statusbool')->checkbox(['checked ' => '']) ?>
 
    
 
     <div class="form-group">
-        <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+        <?= Html::submitButton(
+            $model->isNewRecord ? 'Create' : 'Update',
+            ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']
+        ) ?>
     </div>
 
     <?php ActiveForm::end(); ?>
