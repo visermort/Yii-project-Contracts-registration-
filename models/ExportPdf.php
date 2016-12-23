@@ -10,39 +10,34 @@ use kartik\mpdf\Pdf;
  */
 class ExportPdf
 {
-
-
-	public static function export($data)
-	{
+    public static function export($data)
+    {
         $pdf = new Pdf([
         // set to use core fonts only
-            'mode' => 'Pdf::MODE_CORE', 
+         'mode' => 'Pdf::MODE_CORE',
             // A4 paper format
-            'format' => Pdf::FORMAT_A4, 
+            'format' => Pdf::FORMAT_A4,
              // portrait orientation
-            'orientation' => Pdf::ORIENT_PORTRAIT, 
+            'orientation' => Pdf::ORIENT_PORTRAIT,
             // stream to browser inline
-            'destination' => Pdf::DEST_BROWSER, 
+            'destination' => Pdf::DEST_BROWSER,
             // your html content input
-            'content' => $data,  
+            'content' => $data,
             // format content from your own css file if needed or use the
-            // enhanced bootstrap css built by Krajee for mPDF formatting 
+            // enhanced bootstrap css built by Krajee for mPDF formatting
             'cssFile' => '@vendor/kartik-v/yii2-mpdf/assets/kv-mpdf-bootstrap.min.css',
             // any css to be embedded if required
-            'cssInline' => 'body {font-size:10px}', 
+            'cssInline' => 'body {font-size:10px}',
              // set mPDF properties on the fly
             'options' => ['title' => 'Contract'],
              // call mPDF methods on the fly
-            'methods' => [ 
+            'methods' => [
                  
                 'SetFooter'=>['Стр. {PAGENO} из {nb}'],
             ]
         ]);
     
         // return the pdf output as per the destination setting
-        return $pdf->render(); 
-	}
-
-
-
+        return $pdf->render();
+    }
 }

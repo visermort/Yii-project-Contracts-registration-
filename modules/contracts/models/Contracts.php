@@ -84,21 +84,20 @@ class Contracts extends \yii\db\ActiveRecord
 
     public function beforeSave($insert)
     {
-       if(parent::beforeSave($insert)) {
-           if ($insert) {
+        if (parent::beforeSave($insert)) {
+            if ($insert) {
                 $this->id_user = Yii::$app->user->identity->id;
-           }
-           return true;
-       }
-       return false;
+            }
+            return true;
+        }
+        return false;
     }
 
 
     public function getUser()
     {
          return $this->hasOne(User::className(), ['id' => 'id_user']);
-
-    } 
+    }
     public function getsalePoint()
     {
         return $this->user->username;
@@ -108,7 +107,6 @@ class Contracts extends \yii\db\ActiveRecord
     {
         $language = ($_COOKIE['contractLang'] ? $_COOKIE['contractLang'] : 'ro');
         return $this->percentDic[$language][(int)$this->tariff];
-
     }
 
 

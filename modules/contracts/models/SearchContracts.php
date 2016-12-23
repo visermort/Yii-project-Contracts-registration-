@@ -52,8 +52,7 @@ class SearchContracts extends Contracts
         ]);
 
 
-        $dataProvider->sort->attributes['salePoint'] = 
-            [
+        $dataProvider->sort->attributes['salePoint'] = [
             'asc' => ['mg_user.username' => SORT_ASC],
             'desc' => ['mg_user.username' => SORT_DESC],
             'label' => 'Sale point',
