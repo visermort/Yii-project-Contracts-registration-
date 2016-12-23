@@ -19,29 +19,31 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= Html::a('Create User', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 <?php Pjax::begin(); ?>    <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-       // 'filterModel' => $searchModel,
-        'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
+    'dataProvider' => $dataProvider,
+   // 'filterModel' => $searchModel,
+    'columns' => [
+        ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
-            'name',
-            'username',
-            'roleText',
-            'statusText',
-            [
-                'class' => 'yii\grid\ActionColumn',
-                'template' => '{view}{update}{updatepassword}{delete} ',
-                'buttons' => [
-                    'updatepassword' => function($url, $model, $key) {
-                        return Html::a('<span class="glyphicon glyphicon-user"></span>', '/user/default/update-password?id='.$model->id, [
-                            'title' => 'Update password',
-                            'class' => '']);
-                    }
+        'id',
+        'name',
+        'username',
+        'roleText',
+        'statusText',
+        [
+            'class' => 'yii\grid\ActionColumn',
+            'template' => '{view}{update}{updatepassword}{delete} ',
+            'buttons' => [
+                'updatepassword' => function ($url, $model, $key) {
+                    return Html::a(
+                        '<span class="glyphicon glyphicon-user"></span>',
+                        '/user/default/update-password?id='.$model->id,
+                        ['title' => 'Update password', 'class' => '']
+                    );
+                }
 
-                ],
             ],
- 
         ],
-    ]); ?>
+
+    ],
+]); ?>
 <?php Pjax::end(); ?></div>

@@ -38,46 +38,44 @@ class Excell
         }
     }
 
-	/**
-	 * получение документа Excell
-	 */
-	private static function _makeExcell()
-	{
-		$file = \Yii::createObject([
-			'class' => 'codemix\excelexport\ExcelFile',
+    /**
+    * получение документа Excell
+    */
+    private static function _makeExcell()
+    {
+        $file = \Yii::createObject([
+            'class' => 'codemix\excelexport\ExcelFile',
+            'writer' => '\PHPExcel_Writer_Excel2007', // Override default of `\PHPExcel_Writer_Excel2007`
+            'sheets' => [
+            'Contracts' => [
+                'class' => 'codemix\excelexport\ActiveExcelSheet',
+                'query' => Contracts::find(),
+                'attributes' => [
+                'id',
+                'date',
+                'name',
+                'passport',
+                'phone',
+                'manufacturer',
+                'model',
+                'imei',
+                'price',
+                'sum',
+                'percent',
+                'user.username',
 
-			'writer' => '\PHPExcel_Writer_Excel2007', // Override default of `\PHPExcel_Writer_Excel2007`
-			'sheets' => [
-				'Contracts' => [
-					'class' => 'codemix\excelexport\ActiveExcelSheet',
-					'query' => Contracts::find(),
-
-					'attributes' => [
-						'id',
-						'date',
-						'name',
-						'passport',
-						'phone',
-						'manufacturer',
-						'model',
-						'imei',
-						'price',
-						'sum',
-						'percent',
-						'user.username',
-
-					],
-					'batchSize' => 1000000,
-				],
-			],
-		]);
-		$phpExcell = $file->getWorkbook();
-		foreach (range(0, 11) as $col) {
-			$phpExcell
-				->getSheet(0)
-				->getColumnDimensionByColumn($col)
-				->setAutoSize(true);
-		}
-		return $file;
-	}
+                ],
+                'batchSize' => 1000000,
+                ],
+            ],
+        ]);
+        $phpExcell = $file->getWorkbook();
+        foreach (range(0, 11) as $col) {
+            $phpExcell
+            ->getSheet(0)
+            ->getColumnDimensionByColumn($col)
+            ->setAutoSize(true);
+        }
+        return $file;
+    }
 }

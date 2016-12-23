@@ -20,8 +20,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= Html::a('Create Contract', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
-    <?php if (Yii::$app->user->identity->role == User::ROLE_ADMIN)
-        {
+    <?php if (Yii::$app->user->identity->role == User::ROLE_ADMIN) {
             $views = '{view}{update}{delete}';
         } else {
             $views = '{view}';

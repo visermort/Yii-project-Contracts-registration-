@@ -54,10 +54,10 @@ $this->registerJsFile('/assets/customjs/custom.0.8.2.js', ['depends' => [\yii\we
     <?php $form = ActiveForm::begin(); ?>
 
 
-    <?php if ($model->isNewRecord):?>
-      <?= $form->field($model, 'date')->textInput(['value' => date('Y-m-d'), 'readonly' => true]) ?>
+    <?php if ($model->isNewRecord) :?>
+        <?= $form->field($model, 'date')->textInput(['value' => date('Y-m-d'), 'readonly' => true]) ?>
     <?php else :?>
-      <?= $form->field($model, 'date')->textInput(['readonly' => true]) ?>
+        <?= $form->field($model, 'date')->textInput(['readonly' => true]) ?>
     <?php endif; ?>
 
     <span
@@ -97,7 +97,10 @@ $this->registerJsFile('/assets/customjs/custom.0.8.2.js', ['depends' => [\yii\we
 
  
     <div class="form-group">
-        <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+        <?= Html::submitButton(
+            $model->isNewRecord ? 'Create' : 'Update',
+            ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']
+        )?>
     </div>
 
     <?php ActiveForm::end(); ?>

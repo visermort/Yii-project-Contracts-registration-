@@ -32,11 +32,14 @@ class DefaultController extends Controller
                 'class' => AccessControl::className(),
                 'only' => ['index', 'view', 'create', 'update', 'delete', 'updatepassword'],
                 'rules' => [
-                     [
+                    [
                         'actions' => ['index', 'view', 'create', 'update', 'delete', 'updatepassword'],
                         'allow' => true,
-                        'matchCallback' => function($rule, $action){
-                            return (Yii::$app->user->identity->role == User::ROLE_ADMIN  && Yii::$app->user->identity->status == User::STATUS_ACTIVE);
+                        'matchCallback' => function ($rule, $action) {
+                            return (
+                                Yii::$app->user->identity->role == User::ROLE_ADMIN  &&
+                                Yii::$app->user->identity->status == User::STATUS_ACTIVE
+                            );
                         },
                     ],
 
